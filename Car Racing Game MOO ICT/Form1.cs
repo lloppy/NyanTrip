@@ -6,8 +6,10 @@ namespace Car_Racing_Game_MOO_ICT
 {
     public partial class Form1 : Form
     {
-        Speed speed;
-        Score score;
+        private Speed speed;
+        private Score score;
+        private Sun sun;
+        
         private Game.Game game;
     
         Random carPosition = new Random();
@@ -18,12 +20,13 @@ namespace Car_Racing_Game_MOO_ICT
         {
             InitializeComponent();
             speed = new Speed(12, 15, 12); 
-            score = new Score(); 
+            score = new Score();
+            sun = new Sun();
             game = new Game.Game();
 
             ResetGame();
         }
-
+        
         private void keyisdown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Left)
@@ -50,13 +53,13 @@ namespace Car_Racing_Game_MOO_ICT
 
         private void gameTimerEvent(object sender, EventArgs e)
         {
-            score.UpdateScore(txtScore);
+           score.UpdateScore(txtScore);
 
-            if (goleft == true && player.Left > 10)
+            if (goleft && player.Left > 10)
             {
                 player.Left -= speed.playerSpeed;
             }
-            if (goright == true && player.Left < 415)
+            if (goright && player.Left < 415)
             {
                 player.Left += speed.playerSpeed;
             }
@@ -76,7 +79,6 @@ namespace Car_Racing_Game_MOO_ICT
             AI1.Top += speed.trafficSpeed;
             AI2.Top += speed.trafficSpeed;
 
-
             if (AI1.Top > 530)
             {
                 changeAIcars(AI1);
@@ -86,11 +88,11 @@ namespace Car_Racing_Game_MOO_ICT
             {
                 changeAIcars(AI2);
             }
+           
 
             if (player.Bounds.IntersectsWith(AI1.Bounds) || player.Bounds.IntersectsWith(AI2.Bounds))
             {
-                //gameOver
-                game.gameOver(gameTimer, explosion, player, award, btnStart);
+                sun.UpdateScore(sunScore);
             }
 
             var endscore = this.score.getScore();
@@ -113,14 +115,19 @@ namespace Car_Racing_Game_MOO_ICT
                 speed.trafficSpeed = 25;
                 speed.roadSpeed = 23;
             }
+
+            if (sun.getSunCount() == 100)
+            {
+                game.gameOver(gameTimer, explosion, player, award, btnStart);
+            }
         }
+        
 
         private void changeAIcars(PictureBox tempCar)
         {
             var ai = new AI(tempCar);
         }
         
-
         private void ResetGame()
         {
             game.ResetGame(gameTimer, explosion, award, btnStart);

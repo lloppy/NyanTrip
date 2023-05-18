@@ -9,17 +9,13 @@ namespace Car_Racing_Game_MOO_ICT.Game
         private readonly Random _rand = new Random();
         private readonly Random _carPosition = new Random();
 
-        public PictureBox Car { get; }
+        private PictureBox Car { get; }
 
         public AI(PictureBox car)
         {
             Car = car;
             SetPicture();
             SetPosition();
-        }
-        public AI()
-        {
-         
         }
         
         private void SetPosition()
@@ -40,44 +36,26 @@ namespace Car_Racing_Game_MOO_ICT.Game
         {
             AI.Top = carPosition.Next(200, 500) *-1;
             AI.Left = carPosition.Next(leftX, leftY);
-            
         }
 
 
     private void SetPicture()
-        {
-            int carImageNumber = _rand.Next(1, 10);
+    {
+        var carImageNumber = _rand.Next(1, 10);
 
-            switch (carImageNumber)
-            {
-                case 1:
-                    Car.Image = Properties.Resources.ambulance;
-                    break;
-                case 2:
-                    Car.Image = Properties.Resources.carGreen;
-                    break;
-                case 3:
-                    Car.Image = Properties.Resources.carGrey;
-                    break;
-                case 4:
-                    Car.Image = Properties.Resources.carOrange;
-                    break;
-                case 5:
-                    Car.Image = Properties.Resources.carPink;
-                    break;
-                case 6:
-                    Car.Image = Properties.Resources.CarRed;
-                    break;
-                case 7:
-                    Car.Image = Properties.Resources.carYellow;
-                    break;
-                case 8:
-                    Car.Image = Properties.Resources.TruckBlue;
-                    break;
-                case 9:
-                    Car.Image = Properties.Resources.TruckWhite;
-                    break;
-            }
-        }
+        Car.Image = carImageNumber switch
+        {
+            1 => Properties.Resources.ambulance,
+            2 => Properties.Resources.carGreen,
+            3 => Properties.Resources.carGrey,
+            4 => Properties.Resources.carOrange,
+            5 => Properties.Resources.carPink,
+            6 => Properties.Resources.CarRed,
+            7 => Properties.Resources.carYellow,
+            8 => Properties.Resources.TruckBlue,
+            9 => Properties.Resources.TruckWhite,
+            _ => Car.Image
+        };
+    }
     }
 }

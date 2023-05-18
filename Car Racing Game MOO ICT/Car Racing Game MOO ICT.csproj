@@ -58,6 +58,7 @@
     <Compile Include="Game\Game.cs" />
     <Compile Include="Game\Speed.cs" />
     <Compile Include="Game\Score.cs" />
+    <Compile Include="Game\Sun.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -130,6 +131,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\TruckWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\sun.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

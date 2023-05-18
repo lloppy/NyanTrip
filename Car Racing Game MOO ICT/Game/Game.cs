@@ -5,6 +5,13 @@ namespace Car_Racing_Game_MOO_ICT.Game;
 
 public class Game
 {
+    public PictureBox Player { get; set; }
+    public PictureBox AI1 { get; set; }
+    public PictureBox AI2 { get; set; }
+    public PictureBox Explosion { get; set; }
+    public PictureBox Award { get; set; }
+    public Timer GameTimer { get; set; }
+    
     public void gameOver(Timer gameTimer, PictureBox explosion, PictureBox player, PictureBox award, Button btnStart)
     {
         playSound();
