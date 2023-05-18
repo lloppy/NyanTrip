@@ -54,10 +54,8 @@ namespace Car_Racing_Game_MOO_ICT
 
         private void gameTimerEvent(object sender, EventArgs e)
         {
-
             txtScore.Text = "Score: " + score;
             score++;
-
 
             if (goleft == true && player.Left > 10)
             {
@@ -127,17 +125,8 @@ namespace Car_Racing_Game_MOO_ICT
 
         private void gameOver()
         {
-            playSound();
-            gameTimer.Stop();
-            explosion.Visible = true;
-            player.Controls.Add(explosion);
-            explosion.Location = new Point(-8, 5);
-            explosion.BackColor = Color.Transparent;
-
-            award.Visible = true;
-            award.BringToFront();
-
-            btnStart.Enabled = true;
+            var game = new Game.Game();
+            game.gameOver(gameTimer, explosion, player, award, btnStart);
         }
 
         private void ResetGame()
@@ -165,12 +154,6 @@ namespace Car_Racing_Game_MOO_ICT
         private void restartGame(object sender, EventArgs e)
         {
             ResetGame();
-        }
-
-        private void playSound()
-        {
-            System.Media.SoundPlayer playCrash = new System.Media.SoundPlayer(Properties.Resources.hit);
-            playCrash.Play();
         }
     }
 }
