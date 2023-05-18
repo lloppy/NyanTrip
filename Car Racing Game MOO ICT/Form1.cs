@@ -1,134 +1,122 @@
-﻿using System;
-using System.Windows.Forms;
+﻿using System; 
+using System.Windows.Forms; 
 using Car_Racing_Game_MOO_ICT.Game;
 
-namespace Car_Racing_Game_MOO_ICT
-{
-    public partial class Form1 : Form
-    {
-        private Speed speed;
-        private Score score;
-        private Sun sun;
-        private AI ai;
-        private Game.Game game;
-        Random position = new Random();
+namespace Car_Racing_Game_MOO_ICT { 
+    public partial class Form1 : Form { 
+
+        private Speed speed; 
+        private Score score; 
+        private Sun sun; 
+        private AI ai; 
+        private Game.Game game; 
+        Random position = new Random(); 
         bool goleft, goright;
 
-        public Form1()
-        {
-            InitializeComponent();
+        public Form1() { 
+            InitializeComponent(); 
             speed = new Speed(12, 15, 12); 
-            score = new Score();
-            sun = new Sun();
-            ai = new AI();
-            game = new Game.Game();
-        }
-        private void gameTimerEvent(object sender, EventArgs e)
-        {
-            UpdateScore();
-            MovePlayer();
-            MoveRoad();
-            ai.MoveTraffic(AI1, AI2, speed);
-            MoveSun();
-            CheckCollisions();
-            UpdateAward();
-            CheckGameOver();
-        }
-        private void UpdateScore()
-        {
-            score.UpdateScore(txtScore);
-        }
-        private void MovePlayer() 
-        {
-            if (goleft && player.Left > 10)
-            {
-                player.Left -= speed.playerSpeed;
-            }
-            if (goright && player.Left < 415)
-            {
-                player.Left += speed.playerSpeed;
-            }
-        }
-        private void MoveRoad()
-        {
-            roadTrack1.Top += speed.roadSpeed;
-            roadTrack2.Top += speed.roadSpeed;
-            if (roadTrack2.Top > 519)
-            {
-                roadTrack2.Top = -519;
-            }
-            if (roadTrack1.Top > 519)
-            {
-                roadTrack1.Top = -519;
-            }
-        }
-      
-        private void MoveSun()
-        {
-            sun.MoveSun(SUN1, SUN2, speed);
-            
-            if (player.Bounds.IntersectsWith(SUN1.Bounds) || player.Bounds.IntersectsWith(SUN2.Bounds))
-            {
-                sun.UpdateScore(sunScore);
-            }
-        }
-        private void CheckCollisions() 
-        {
-            if (player.Bounds.IntersectsWith(AI1.Bounds) || player.Bounds.IntersectsWith(AI2.Bounds))
-            {
-                game.gameOver(gameTimer, explosion, player, award, btnStart);
-            }
-        }
-        private void UpdateAward() 
-        {
-            var endScore = score.getScore();
-            if (endScore > 40 && endScore < 500)
-            {
-                award.Image = Properties.Resources.bronze;
-            }   
-            if (endScore > 500 && endScore < 2000)
-            {
-                award.Image = Properties.Resources.silver;
-                speed.roadSpeed = 18;
-                speed.trafficSpeed = 20;
-            }
-            if (endScore > 2000)
-            {
-                award.Image = Properties.Resources.gold;
-                speed.trafficSpeed = 25;
-                speed.roadSpeed = 23;
-            }
-        }
-        private void CheckGameOver()
-        {
-            if (sun.getSunCount() == 100)
-            {
-                game.gameOver(gameTimer, explosion, player, award, btnStart);
-            }
-        }
+            score = new Score(); 
+            sun = new Sun(); 
+            ai = new AI(); 
+            game = new Game.Game(); 
+            score.ScoreUpdated += Score_ScoreUpdated; 
+        } 
         
+        private void gameTimerEvent(object sender, EventArgs e) { 
+            UpdateScore(); 
+            MovePlayer(); 
+            MoveRoad(); 
+            ai.MoveTraffic(AI1, AI2, speed); 
+            MoveSun(); 
+            CheckCollisions(); 
+            UpdateAward(); 
+            CheckGameOver(); 
+        } 
         
-        
-        private void ResetGame(object sender, EventArgs e)
-        {
-            game.ResetGame(gameTimer, explosion, award, btnStart);     
-            speed.roadSpeed = 13;
-            speed.trafficSpeed = 16;
-            score.ResetScore();
-            sun.ResetSunScore();
-            sun.UpdateScore(sunScore);
+        private void Score_ScoreUpdated(object sender, int e) { 
+            txtScore.Text = "Score: " + e; 
+        }
 
-            AI1.Top = position.Next(200, 500) * -1;
-            AI1.Left = position.Next(5, 200);
-            AI2.Top = position.Next(200, 500) * -1;
-            AI2.Left = position.Next(245, 422);
+        private void UpdateScore() { 
+            score.UpdateScore(txtScore); 
+        }
+
+        private void MovePlayer() { 
+            if (goleft && player.Left > 10) { 
+                player.Left -= speed.playerSpeed; 
+            } 
+            if (goright && player.Left < 415) { 
+                player.Left += speed.playerSpeed; 
+            } 
+        } 
+
+        private void MoveRoad() { 
+            roadTrack1.Top += speed.roadSpeed; 
+            roadTrack2.Top += speed.roadSpeed; 
+            if (roadTrack2.Top > 519) { 
+                roadTrack2.Top = -519; 
+            } 
+            if (roadTrack1.Top > 519) { 
+                roadTrack1.Top = -519; 
+            } 
+        } 
+
+        private void MoveSun() { 
+            sun.MoveSun(SUN1, SUN2, speed); 
+            if (player.Bounds.IntersectsWith(SUN1.Bounds) || player.Bounds.IntersectsWith(SUN2.Bounds)) { 
+                sun.UpdateScore(sunScore); 
+            } 
+        } 
+
+        private void CheckCollisions() { 
+            if (player.Bounds.IntersectsWith(AI1.Bounds) || player.Bounds.IntersectsWith(AI2.Bounds)) { 
+                game.gameOver(gameTimer, explosion, player, award, btnStart); 
+            } 
+        } 
+
+        private void UpdateAward() { 
+            var endScore = score.getScore(); 
+            if (endScore > 40 && endScore < 500) { 
+                award.Image = Properties.Resources.bronze; 
+            } 
+            if (endScore > 500 && endScore < 2000) { 
+                award.Image = Properties.Resources.silver; 
+                speed.roadSpeed = 18; 
+                speed.trafficSpeed = 20; 
+            } 
+            if (endScore > 2000) { 
+                award.Image = Properties.Resources.gold; 
+                speed.trafficSpeed = 25; 
+                speed.roadSpeed = 23; 
+            } 
+        } 
+
+        private void CheckGameOver() { 
+            if (sun.getSunCount() == 100) { 
+                game.gameOver(gameTimer, explosion, player, award, btnStart); 
+            } 
+        } 
+
+        private void ResetGame(object sender, EventArgs e) { 
+            game.ResetGame(gameTimer, explosion, award, btnStart); 
+            speed.roadSpeed = 13; 
+            speed.trafficSpeed = 16; 
+            score.ResetScore(); 
+            sun.ResetSunScore(); 
+            sun.UpdateScore(sunScore); 
             
-            SUN1.Top = position.Next(200, 500) * -1;
-            SUN1.Left = position.Next(5, 200);
-            SUN2.Top = position.Next(200, 500) * -1;
-            SUN2.Left = position.Next(245, 422);
+            AI1.Top = position.Next(200, 500) * -1; 
+            AI1.Left = position.Next(5, 200); 
+            AI2.Top = position.Next(200, 500) * -1; 
+            AI2.Left = position.Next(245, 422); 
             
-            gameTimer.Start();
+            SUN1.Top = position.Next(200, 500) * -1; 
+            SUN1.Left = position.Next(5, 200); 
+            SUN2.Top = position.Next(200, 500) * -1; 
+            SUN2.Left = position.Next(245, 422); 
+            
+            gameTimer.Start(); 
         }
 
         private void keyisdown(object sender, KeyEventArgs e)

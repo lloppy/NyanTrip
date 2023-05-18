@@ -1,10 +1,13 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace Car_Racing_Game_MOO_ICT.Game;
 
 public class Score
 {
     private int _score;
+
+    public event EventHandler<int> ScoreUpdated;
 
     public Score()
     {
@@ -18,7 +21,7 @@ public class Score
     public void UpdateScore(Label label)
     {
         _score++;
-        label.Text = "Score: " + _score;
+        ScoreUpdated?.Invoke(this, _score);
     }
 
     public void ResetScore()
