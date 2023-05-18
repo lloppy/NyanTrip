@@ -54,4 +54,24 @@ public class Sun
     {
         SunPictureBox.Image = Properties.Resources.sun;
     }
+
+    public void MoveSun(PictureBox SUN1, PictureBox SUN2, Speed speed)
+    {
+        SUN1.Top += speed.trafficSpeed;
+        SUN2.Top += speed.trafficSpeed;
+        
+        if (SUN1.Top > 530)
+        {
+            ChangeAISuns(SUN1);
+        }
+        if (SUN2.Top > 530)
+        {
+            ChangeAISuns(SUN2);
+        }
+    }
+    
+    private void ChangeAISuns(PictureBox tempSun)
+    {
+        var ai = new Sun(tempSun);
+    }
 }

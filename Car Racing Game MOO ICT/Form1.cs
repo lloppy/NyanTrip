@@ -75,16 +75,8 @@ namespace Car_Racing_Game_MOO_ICT
         }
         private void MoveSun()
         {
-            SUN1.Top += speed.trafficSpeed;
-            SUN2.Top += speed.trafficSpeed;
-            if (SUN1.Top > 530)
-            {
-                ChangeAISuns(SUN1);
-            }
-            if (SUN2.Top > 530)
-            {
-                ChangeAISuns(SUN2);
-            }
+            sun.MoveSun(SUN1, SUN2, speed);
+            
             if (player.Bounds.IntersectsWith(SUN1.Bounds) || player.Bounds.IntersectsWith(SUN2.Bounds))
             {
                 sun.UpdateScore(sunScore);
@@ -123,11 +115,6 @@ namespace Car_Racing_Game_MOO_ICT
             {
                 game.gameOver(gameTimer, explosion, player, award, btnStart);
             }
-        }
-
-        private void ChangeAISuns(PictureBox tempSun)
-        {
-            var ai = new Sun(tempSun);
         }
         
         private void ChangeAICars(PictureBox tempCar)
