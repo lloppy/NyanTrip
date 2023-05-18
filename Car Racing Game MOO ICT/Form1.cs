@@ -106,15 +106,15 @@ namespace Car_Racing_Game_MOO_ICT
             if (score > 500 && score < 2000)
             {
                 award.Image = Properties.Resources.silver;
-                roadSpeed = 20;
-                trafficSpeed = 22;
+                roadSpeed = 18;
+                trafficSpeed = 20;
             }
 
             if (score > 2000)
             {
                 award.Image = Properties.Resources.gold;
-                trafficSpeed = 27;
-                roadSpeed = 25;
+                trafficSpeed = 25;
+                roadSpeed = 23;
             }
         }
 
@@ -131,23 +131,19 @@ namespace Car_Racing_Game_MOO_ICT
 
         private void ResetGame()
         {
-            btnStart.Enabled = false;
-            explosion.Visible = false;
-            award.Visible = false;
-            goleft = false;
-            goright = false;
-            score = 0;
-            award.Image = Properties.Resources.bronze;
-
+            var game = new Game.Game();
+            game.ResetGame(gameTimer, explosion, award, btnStart);
+            
             roadSpeed = 12;
             trafficSpeed = 15;
+            score = 0;
 
-            AI1.Top = carPosition.Next(200, 500) *-1;
+            AI1.Top = carPosition.Next(200, 500) * -1;
             AI1.Left = carPosition.Next(5, 200);
 
             AI2.Top = carPosition.Next(200, 500) * -1;
             AI2.Left = carPosition.Next(245, 422);
-
+            
             gameTimer.Start();
         }
 

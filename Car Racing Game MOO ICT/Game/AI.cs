@@ -17,22 +17,34 @@ namespace Car_Racing_Game_MOO_ICT.Game
             SetPicture();
             SetPosition();
         }
-
+        public AI()
+        {
+         
+        }
+        
         private void SetPosition()
         {
             Car.Top = _carPosition.Next(100, 400) * -1;
 
-            if ((string) Car.Tag == "carLeft")
+            if ((string)Car.Tag == "carLeft")
             {
                 Car.Left = _carPosition.Next(5, 200);
             }
-            else if ((string) Car.Tag == "carRight")
+            else if ((string)Car.Tag == "carRight")
             {
                 Car.Left = _carPosition.Next(245, 422);
             }
         }
 
-        private void SetPicture()
+        public void ResetPosition(PictureBox AI, Random carPosition, int leftX, int leftY)
+        {
+            AI.Top = carPosition.Next(200, 500) *-1;
+            AI.Left = carPosition.Next(leftX, leftY);
+            
+        }
+
+
+    private void SetPicture()
         {
             int carImageNumber = _rand.Next(1, 10);
 

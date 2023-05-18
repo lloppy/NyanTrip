@@ -19,7 +19,18 @@ public class Game
 
         btnStart.Enabled = true;
     }
-    
+
+    public void ResetGame(Timer gameTimer, PictureBox explosion, PictureBox award, Button btnStart)
+    {
+        btnStart.Enabled = false;
+        explosion.Visible = false;
+        award.Visible = false;
+        
+        award.Image = Properties.Resources.bronze;
+        //roadSpeed = 12;
+        //trafficSpeed = 15;
+        
+    }
     private void playSound()
     {
         System.Media.SoundPlayer playCrash = new System.Media.SoundPlayer(Properties.Resources.hit);
