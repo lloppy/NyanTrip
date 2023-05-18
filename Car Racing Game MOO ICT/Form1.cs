@@ -13,9 +13,7 @@ namespace Car_Racing_Game_MOO_ICT
 {
     public partial class Form1 : Form
     {
-        int roadSpeed;
-        int trafficSpeed;
-        int playerSpeed = 12;
+        Speed speed;
         int score;
 
         Random carPosition = new Random();
@@ -25,6 +23,7 @@ namespace Car_Racing_Game_MOO_ICT
         public Form1()
         {
             InitializeComponent();
+            speed = new Speed(12, 15, 12); 
             ResetGame();
         }
 
@@ -59,15 +58,15 @@ namespace Car_Racing_Game_MOO_ICT
 
             if (goleft == true && player.Left > 10)
             {
-                player.Left -= playerSpeed;
+                player.Left -= speed.playerSpeed;
             }
             if (goright == true && player.Left < 415)
             {
-                player.Left += playerSpeed;
+                player.Left += speed.playerSpeed;
             }
 
-            roadTrack1.Top += roadSpeed;
-            roadTrack2.Top += roadSpeed;
+            roadTrack1.Top += speed.roadSpeed;
+            roadTrack2.Top += speed.roadSpeed;
 
             if (roadTrack2.Top > 519)
             {
@@ -78,8 +77,8 @@ namespace Car_Racing_Game_MOO_ICT
                 roadTrack1.Top = -519;
             }
 
-            AI1.Top += trafficSpeed;
-            AI2.Top += trafficSpeed;
+            AI1.Top += speed.trafficSpeed;
+            AI2.Top += speed.trafficSpeed;
 
 
             if (AI1.Top > 530)
@@ -106,15 +105,15 @@ namespace Car_Racing_Game_MOO_ICT
             if (score > 500 && score < 2000)
             {
                 award.Image = Properties.Resources.silver;
-                roadSpeed = 18;
-                trafficSpeed = 20;
+                speed.roadSpeed = 18;
+                speed.trafficSpeed = 20;
             }
 
             if (score > 2000)
             {
                 award.Image = Properties.Resources.gold;
-                trafficSpeed = 25;
-                roadSpeed = 23;
+                speed.trafficSpeed = 25;
+                speed.roadSpeed = 23;
             }
         }
 
@@ -134,8 +133,8 @@ namespace Car_Racing_Game_MOO_ICT
             var game = new Game.Game();
             game.ResetGame(gameTimer, explosion, award, btnStart);
             
-            roadSpeed = 12;
-            trafficSpeed = 15;
+            speed.roadSpeed = 13;
+            speed.trafficSpeed = 16;
             score = 0;
 
             AI1.Top = carPosition.Next(200, 500) * -1;
