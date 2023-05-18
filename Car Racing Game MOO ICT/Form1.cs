@@ -9,6 +9,7 @@ namespace Car_Racing_Game_MOO_ICT
         private Speed speed;
         private Score score;
         private Sun sun;
+        private AI ai;
         private Game.Game game;
         Random position = new Random();
         bool goleft, goright;
@@ -19,6 +20,7 @@ namespace Car_Racing_Game_MOO_ICT
             speed = new Speed(12, 15, 12); 
             score = new Score();
             sun = new Sun();
+            ai = new AI();
             game = new Game.Game();
         }
         private void gameTimerEvent(object sender, EventArgs e)
@@ -26,7 +28,7 @@ namespace Car_Racing_Game_MOO_ICT
             UpdateScore();
             MovePlayer();
             MoveRoad();
-            MoveTraffic();
+            ai.MoveTraffic(AI1, AI2, speed);
             MoveSun();
             CheckCollisions();
             UpdateAward();
@@ -60,19 +62,7 @@ namespace Car_Racing_Game_MOO_ICT
                 roadTrack1.Top = -519;
             }
         }
-        private void MoveTraffic()
-        {
-            AI1.Top += speed.trafficSpeed;
-            AI2.Top += speed.trafficSpeed;
-            if (AI1.Top > 530)
-            {
-                ChangeAICars(AI1);
-            }
-            if (AI2.Top > 530)
-            {
-                ChangeAICars(AI2);
-            }
-        }
+      
         private void MoveSun()
         {
             sun.MoveSun(SUN1, SUN2, speed);
@@ -117,10 +107,7 @@ namespace Car_Racing_Game_MOO_ICT
             }
         }
         
-        private void ChangeAICars(PictureBox tempCar)
-        {
-            var ai = new AI(tempCar);
-        }
+        
         
         private void ResetGame(object sender, EventArgs e)
         {
