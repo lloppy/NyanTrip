@@ -8,7 +8,8 @@ namespace Car_Racing_Game_MOO_ICT
     {
         Speed speed;
         Score score;
-
+        private Game.Game game;
+    
         Random carPosition = new Random();
 
         bool goleft, goright;
@@ -18,6 +19,7 @@ namespace Car_Racing_Game_MOO_ICT
             InitializeComponent();
             speed = new Speed(12, 15, 12); 
             score = new Score(); 
+            game = new Game.Game();
 
             ResetGame();
         }
@@ -87,7 +89,8 @@ namespace Car_Racing_Game_MOO_ICT
 
             if (player.Bounds.IntersectsWith(AI1.Bounds) || player.Bounds.IntersectsWith(AI2.Bounds))
             {
-                gameOver();
+                //gameOver
+                game.gameOver(gameTimer, explosion, player, award, btnStart);
             }
 
             var endscore = this.score.getScore();
@@ -96,8 +99,7 @@ namespace Car_Racing_Game_MOO_ICT
             {
                 award.Image = Properties.Resources.bronze;
             }
-
-
+            
             if (endscore > 500 && endscore < 2000)
             {
                 award.Image = Properties.Resources.silver;
@@ -117,16 +119,10 @@ namespace Car_Racing_Game_MOO_ICT
         {
             var ai = new AI(tempCar);
         }
-
-        private void gameOver()
-        {
-            var game = new Game.Game();
-            game.gameOver(gameTimer, explosion, player, award, btnStart);
-        }
+        
 
         private void ResetGame()
         {
-            var game = new Game.Game();
             game.ResetGame(gameTimer, explosion, award, btnStart);
             
             speed.roadSpeed = 13;
