@@ -76,7 +76,7 @@ namespace Car_Racing_Game_MOO_ICT {
         } 
 
         private void UpdateAward() { 
-            var endScore = score.getScore(); 
+            var endScore = score.CurrentScore; 
             if (endScore > 40 && endScore < 500) { 
                 award.Image = Properties.Resources.bronze; 
             } 

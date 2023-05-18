@@ -5,7 +5,7 @@ namespace Car_Racing_Game_MOO_ICT.Game;
 
 public class Score
 {
-    private int _score;
+    private static int _score;
 
     public event EventHandler<int> ScoreUpdated;
 
@@ -14,14 +14,16 @@ public class Score
         _score = 0;
     }
 
-    public int getScore()
+    public int CurrentScore
     {
-        return _score ;
+        get => _score;
+        private set => _score = value;
     }
+    
     public void UpdateScore(Label label)
     {
         _score++;
-        ScoreUpdated?.Invoke(this, _score);
+        ScoreUpdated?.Invoke(null, CurrentScore);
     }
 
     public void ResetScore()
