@@ -72,7 +72,7 @@ public class Sun
             ChangeAISuns(SUN2);
         }
     }
-    
+
     private void ChangeAISuns(PictureBox tempSun)
     {
         var ai = new Sun(tempSun);

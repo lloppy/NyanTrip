@@ -5,38 +5,48 @@ namespace Car_Racing_Game_MOO_ICT.Game;
 
 public class Game
 {
-    public PictureBox Player { get; set; }
-    public PictureBox AI1 { get; set; }
-    public PictureBox AI2 { get; set; }
-    public PictureBox Explosion { get; set; }
-    public PictureBox Award { get; set; }
-    public Timer GameTimer { get; set; }
+    private PictureBox Player { get; }
+    private PictureBox Explosion { get; }
+    private PictureBox Award { get; }
+    private Timer GameTimer { get; }
+    private Button BtnStart { get; }
+    private Label SunScore { get; }
+
+    public Game(Timer gameTimer, PictureBox explosion, PictureBox player, PictureBox award, Button btnStart, Label sunScore)
+    {
+        GameTimer = gameTimer;
+        Explosion = explosion;
+        Player = player;
+        Award = award;
+        BtnStart = btnStart;
+        SunScore = sunScore;
+    }
     
     private Score score; 
     private Sun sun; 
     
-    public void gameOver(Timer gameTimer, PictureBox explosion, PictureBox player, PictureBox award, Button btnStart)
+    public void gameOver()
     {
         playSound();
-        gameTimer.Stop();
-        explosion.Visible = true;
-        player.Controls.Add(explosion);
-        explosion.Location = new Point(-8, 5);
-        explosion.BackColor = Color.Transparent;
+        GameTimer.Stop();
+        Explosion.Visible = true;
+        Player.Controls.Add(Explosion);
+        Explosion.Location = new Point(-8, 5);
+        Explosion.BackColor = Color.Transparent;
 
-        award.Visible = true;
-        award.BringToFront();
+        Award.Visible = true;
+        Award.BringToFront();
 
-        btnStart.Enabled = true;
+        BtnStart.Enabled = true;
     }
 
-    public void ResetGame(Timer gameTimer, PictureBox explosion, PictureBox award, Button btnStart, Label sunScore)
+    public void ResetGame()
     {
-        btnStart.Enabled = false;
-        explosion.Visible = false;
-        award.Visible = false;
+        BtnStart.Enabled = false;
+        Explosion.Visible = false;
+        Award.Visible = false;
         
-        award.Image = Properties.Resources.bronze;
+        Award.Image = Properties.Resources.bronze;
         //roadSpeed = 12;
         //trafficSpeed = 15;
         
@@ -45,7 +55,7 @@ public class Game
         
         score.ResetScore(); 
         sun.ResetSunScore();
-        sun.UpdateScore(sunScore);
+        sun.UpdateScore(SunScore);
     }
     
     private void playSound()

@@ -19,7 +19,7 @@ namespace Car_Racing_Game_MOO_ICT {
             score = new Score(); 
             sun = new Sun(); 
             ai = new AI(); 
-            game = new Game.Game(); 
+            game = new Game.Game(gameTimer, explosion, player, award, btnStart, sunScore); 
             score.ScoreUpdated += Score_ScoreUpdated; 
         } 
         
@@ -63,7 +63,8 @@ namespace Car_Racing_Game_MOO_ICT {
         } 
 
         private void MoveSun() { 
-            sun.MoveSun(SUN1, SUN2, speed); 
+            sun.MoveSun(SUN1, SUN2, speed);
+
             if (player.Bounds.IntersectsWith(SUN1.Bounds)){ 
                 sun.UpdateScore(sunScore);
                 SUN1.Visible = false;
@@ -77,7 +78,7 @@ namespace Car_Racing_Game_MOO_ICT {
 
         private void CheckCollisions() { 
             if (player.Bounds.IntersectsWith(AI1.Bounds) || player.Bounds.IntersectsWith(AI2.Bounds)) { 
-                game.gameOver(gameTimer, explosion, player, award, btnStart); 
+                game.gameOver(); 
             } 
         } 
 
@@ -100,12 +101,12 @@ namespace Car_Racing_Game_MOO_ICT {
 
         private void CheckGameOver() { 
             if (sun.getSunCount() == 100) { 
-                game.gameOver(gameTimer, explosion, player, award, btnStart); 
+                game.gameOver(); 
             } 
         } 
 
         private void ResetGame(object sender, EventArgs e) { 
-            game.ResetGame(gameTimer, explosion, award, btnStart, sunScore); 
+            game.ResetGame(); 
             speed.roadSpeed = 13; 
             speed.trafficSpeed = 16;
             
