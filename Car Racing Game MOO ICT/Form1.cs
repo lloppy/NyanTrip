@@ -12,7 +12,7 @@ namespace Car_Racing_Game_MOO_ICT
         
         private Game.Game game;
     
-        Random carPosition = new Random();
+        Random position = new Random();
 
         bool goleft, goright;
 
@@ -53,7 +53,7 @@ namespace Car_Racing_Game_MOO_ICT
 
         private void gameTimerEvent(object sender, EventArgs e)
         {
-           score.UpdateScore(txtScore);
+            score.UpdateScore(txtScore);
 
             if (goleft && player.Left > 10)
             {
@@ -78,7 +78,10 @@ namespace Car_Racing_Game_MOO_ICT
 
             AI1.Top += speed.trafficSpeed;
             AI2.Top += speed.trafficSpeed;
-
+            
+            SUN1.Top += speed.trafficSpeed;
+            SUN2.Top += speed.trafficSpeed;
+            
             if (AI1.Top > 530)
             {
                 changeAIcars(AI1);
@@ -88,11 +91,26 @@ namespace Car_Racing_Game_MOO_ICT
             {
                 changeAIcars(AI2);
             }
+            
+            if (AI1.Top > 520)
+            {
+                changeAIsuns(SUN1);
+            }
+
+            if (AI2.Top > 520)
+            {
+                changeAIsuns(SUN2);
+            }
            
 
-            if (player.Bounds.IntersectsWith(AI1.Bounds) || player.Bounds.IntersectsWith(AI2.Bounds))
+            if (player.Bounds.IntersectsWith(SUN1.Bounds) || player.Bounds.IntersectsWith(SUN2.Bounds))
             {
                 sun.UpdateScore(sunScore);
+            }
+            
+            if (player.Bounds.IntersectsWith(AI1.Bounds) || player.Bounds.IntersectsWith(AI2.Bounds))
+            {
+                game.gameOver(gameTimer, explosion, player, award, btnStart);
             }
 
             var endscore = this.score.getScore();
@@ -121,8 +139,12 @@ namespace Car_Racing_Game_MOO_ICT
                 game.gameOver(gameTimer, explosion, player, award, btnStart);
             }
         }
-        
 
+        private void changeAIsuns(PictureBox tempSun)
+        {
+            var ai = new Sun(tempSun);
+        }
+        
         private void changeAIcars(PictureBox tempCar)
         {
             var ai = new AI(tempCar);
@@ -136,11 +158,18 @@ namespace Car_Racing_Game_MOO_ICT
             speed.trafficSpeed = 16;
             score.ResetScore();
 
-            AI1.Top = carPosition.Next(200, 500) * -1;
-            AI1.Left = carPosition.Next(5, 200);
+            AI1.Top = position.Next(200, 500) * -1;
+            AI1.Left = position.Next(5, 200);
 
-            AI2.Top = carPosition.Next(200, 500) * -1;
-            AI2.Left = carPosition.Next(245, 422);
+            AI2.Top = position.Next(200, 500) * -1;
+            AI2.Left = position.Next(245, 422);
+            
+            
+            SUN1.Top = position.Next(200, 500) * -1;
+            SUN1.Left = position.Next(5, 200);
+
+            SUN2.Top = position.Next(200, 500) * -1;
+            SUN2.Left = position.Next(245, 422);
             
             gameTimer.Start();
         }

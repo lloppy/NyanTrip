@@ -7,8 +7,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System.Drawing;
-
 namespace Car_Racing_Game_MOO_ICT.Properties {
     using System;
     
@@ -191,17 +189,15 @@ namespace Car_Racing_Game_MOO_ICT.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {C:\Users\Полина\Downloads\Top-Down-Car-Racing\Top-Down\Car Racing Game MOO ICT\Resources\sun.png}.
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        ///
-        
         internal static System.Drawing.Bitmap sun {
             get {
                 object obj = ResourceManager.GetObject("sun", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
