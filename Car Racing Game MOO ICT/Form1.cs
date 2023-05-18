@@ -23,32 +23,6 @@ namespace Car_Racing_Game_MOO_ICT
             score = new Score();
             sun = new Sun();
             game = new Game.Game();
-
-            ResetGame();
-        }
-        
-        private void keyisdown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Left)
-            {
-                goleft = true;
-            }
-            if (e.KeyCode == Keys.Right)
-            {
-                goright = true;
-            }
-        }
-
-        private void keyisup(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Left)
-            {
-                goleft = false;
-            }
-            if (e.KeyCode == Keys.Right)
-            {
-                goright = false;
-            }
         }
 
         private void gameTimerEvent(object sender, EventArgs e)
@@ -150,7 +124,7 @@ namespace Car_Racing_Game_MOO_ICT
             var ai = new AI(tempCar);
         }
         
-        private void ResetGame()
+        private void ResetGame(object sender, EventArgs e)
         {
             game.ResetGame(gameTimer, explosion, award, btnStart);
             
@@ -165,8 +139,7 @@ namespace Car_Racing_Game_MOO_ICT
 
             AI2.Top = position.Next(200, 500) * -1;
             AI2.Left = position.Next(245, 422);
-            
-            
+
             SUN1.Top = position.Next(200, 500) * -1;
             SUN1.Left = position.Next(5, 200);
 
@@ -176,9 +149,28 @@ namespace Car_Racing_Game_MOO_ICT
             gameTimer.Start();
         }
 
-        private void restartGame(object sender, EventArgs e)
+        private void keyisdown(object sender, KeyEventArgs e)
         {
-            ResetGame();
+            if (e.KeyCode == Keys.Left)
+            {
+                goleft = true;
+            }
+            if (e.KeyCode == Keys.Right)
+            {
+                goright = true;
+            }
+        }
+
+        private void keyisup(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Left)
+            {
+                goleft = false;
+            }
+            if (e.KeyCode == Keys.Right)
+            {
+                goright = false;
+            }
         }
     }
 }

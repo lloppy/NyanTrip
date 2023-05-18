@@ -85,7 +85,7 @@ namespace Car_Racing_Game_MOO_ICT
             this.btnStart.ForeColor = Color.Indigo;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
-            this.btnStart.Click += new System.EventHandler(this.restartGame);
+            this.btnStart.Click += new System.EventHandler(this.ResetGame);
             // 
             // txtScore
             // 
