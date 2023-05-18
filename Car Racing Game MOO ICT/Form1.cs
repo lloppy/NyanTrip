@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Car_Racing_Game_MOO_ICT.Game;
 
@@ -14,7 +7,7 @@ namespace Car_Racing_Game_MOO_ICT
     public partial class Form1 : Form
     {
         Speed speed;
-        int score;
+        Score score;
 
         Random carPosition = new Random();
 
@@ -24,6 +17,8 @@ namespace Car_Racing_Game_MOO_ICT
         {
             InitializeComponent();
             speed = new Speed(12, 15, 12); 
+            score = new Score(); 
+
             ResetGame();
         }
 
@@ -53,8 +48,7 @@ namespace Car_Racing_Game_MOO_ICT
 
         private void gameTimerEvent(object sender, EventArgs e)
         {
-            txtScore.Text = "Score: " + score;
-            score++;
+            score.UpdateScore(txtScore);
 
             if (goleft == true && player.Left > 10)
             {
@@ -64,7 +58,7 @@ namespace Car_Racing_Game_MOO_ICT
             {
                 player.Left += speed.playerSpeed;
             }
-
+            
             roadTrack1.Top += speed.roadSpeed;
             roadTrack2.Top += speed.roadSpeed;
 
@@ -96,20 +90,22 @@ namespace Car_Racing_Game_MOO_ICT
                 gameOver();
             }
 
-            if (score > 40 && score < 500)
+            var endscore = this.score.getScore();
+            
+            if (endscore > 40 && endscore < 500)
             {
                 award.Image = Properties.Resources.bronze;
             }
 
 
-            if (score > 500 && score < 2000)
+            if (endscore > 500 && endscore < 2000)
             {
                 award.Image = Properties.Resources.silver;
                 speed.roadSpeed = 18;
                 speed.trafficSpeed = 20;
             }
 
-            if (score > 2000)
+            if (endscore > 2000)
             {
                 award.Image = Properties.Resources.gold;
                 speed.trafficSpeed = 25;
@@ -135,7 +131,7 @@ namespace Car_Racing_Game_MOO_ICT
             
             speed.roadSpeed = 13;
             speed.trafficSpeed = 16;
-            score = 0;
+            score.ResetScore();
 
             AI1.Top = carPosition.Next(200, 500) * -1;
             AI1.Left = carPosition.Next(5, 200);
