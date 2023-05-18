@@ -64,9 +64,15 @@ namespace Car_Racing_Game_MOO_ICT {
 
         private void MoveSun() { 
             sun.MoveSun(SUN1, SUN2, speed); 
-            if (player.Bounds.IntersectsWith(SUN1.Bounds) || player.Bounds.IntersectsWith(SUN2.Bounds)) { 
-                sun.UpdateScore(sunScore); 
-            } 
+            if (player.Bounds.IntersectsWith(SUN1.Bounds)){ 
+                sun.UpdateScore(sunScore);
+                SUN1.Visible = false;
+            }
+            if (player.Bounds.IntersectsWith(SUN2.Bounds))
+            {
+                sun.UpdateScore(sunScore);
+                SUN2.Visible = false;
+            }
         } 
 
         private void CheckCollisions() { 
@@ -99,12 +105,9 @@ namespace Car_Racing_Game_MOO_ICT {
         } 
 
         private void ResetGame(object sender, EventArgs e) { 
-            game.ResetGame(gameTimer, explosion, award, btnStart); 
+            game.ResetGame(gameTimer, explosion, award, btnStart, sunScore); 
             speed.roadSpeed = 13; 
-            speed.trafficSpeed = 16; 
-            score.ResetScore(); 
-            sun.ResetSunScore(); 
-            sun.UpdateScore(sunScore); 
+            speed.trafficSpeed = 16;
             
             AI1.Top = position.Next(200, 500) * -1; 
             AI1.Left = position.Next(5, 200); 

@@ -30,7 +30,7 @@ public class Sun
         _sun++;
         label.Text = "Sun: " + _sun;
     }
-    
+
     private void SetPosition()
     {
         SunPictureBox.Top = _sunPosition.Next(100, 400) * -1;
@@ -57,6 +57,9 @@ public class Sun
 
     public void MoveSun(PictureBox SUN1, PictureBox SUN2, Speed speed)
     {
+        SUN2.Visible = true;
+        SUN1.Visible = true;
+        
         SUN1.Top += speed.trafficSpeed;
         SUN2.Top += speed.trafficSpeed;
         

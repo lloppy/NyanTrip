@@ -12,6 +12,9 @@ public class Game
     public PictureBox Award { get; set; }
     public Timer GameTimer { get; set; }
     
+    private Score score; 
+    private Sun sun; 
+    
     public void gameOver(Timer gameTimer, PictureBox explosion, PictureBox player, PictureBox award, Button btnStart)
     {
         playSound();
@@ -27,7 +30,7 @@ public class Game
         btnStart.Enabled = true;
     }
 
-    public void ResetGame(Timer gameTimer, PictureBox explosion, PictureBox award, Button btnStart)
+    public void ResetGame(Timer gameTimer, PictureBox explosion, PictureBox award, Button btnStart, Label sunScore)
     {
         btnStart.Enabled = false;
         explosion.Visible = false;
@@ -37,7 +40,14 @@ public class Game
         //roadSpeed = 12;
         //trafficSpeed = 15;
         
+        score = new Score(); 
+        sun = new Sun(); 
+        
+        score.ResetScore(); 
+        sun.ResetSunScore();
+        sun.UpdateScore(sunScore);
     }
+    
     private void playSound()
     {
         System.Media.SoundPlayer playCrash = new System.Media.SoundPlayer(Properties.Resources.hit);
