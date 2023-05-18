@@ -167,9 +167,6 @@ namespace Car_Racing_Game_MOO_ICT
             AI2.Left = carPosition.Next(245, 422);
 
             gameTimer.Start();
-
-
-
         }
 
         private void restartGame(object sender, EventArgs e)
