@@ -66,12 +66,12 @@ namespace Car_Racing_Game_MOO_ICT
                 changeAIcars(AI2);
             }
             
-            if (AI1.Top > 520)
+            if (SUN1.Top > 530)
             {
                 changeAIsuns(SUN1);
             }
 
-            if (AI2.Top > 520)
+            if (SUN2.Top > 530)
             {
                 changeAIsuns(SUN2);
             }
