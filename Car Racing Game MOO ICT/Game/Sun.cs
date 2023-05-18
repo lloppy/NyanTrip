@@ -35,14 +35,19 @@ public class Sun
     {
         SunPictureBox.Top = _sunPosition.Next(100, 400) * -1;
 
-        if ((string)SunPictureBox.Tag == "carLeft")
+        if ((string)SunPictureBox.Tag == "sunLeft")
         {
             SunPictureBox.Left = _sunPosition.Next(5, 200);
         }
-        else if ((string)SunPictureBox.Tag == "carRight")
+        else if ((string)SunPictureBox.Tag == "sunRight")
         {
             SunPictureBox.Left = _sunPosition.Next(245, 422);
         }
+    }
+    
+    public void ResetSunScore()
+    {
+        _sun = -1;
     }
 
     private void SetPicture()

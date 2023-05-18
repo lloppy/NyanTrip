@@ -157,6 +157,8 @@ namespace Car_Racing_Game_MOO_ICT
             speed.roadSpeed = 13;
             speed.trafficSpeed = 16;
             score.ResetScore();
+            sun.ResetSunScore();
+            sun.UpdateScore(sunScore);
 
             AI1.Top = position.Next(200, 500) * -1;
             AI1.Left = position.Next(5, 200);
