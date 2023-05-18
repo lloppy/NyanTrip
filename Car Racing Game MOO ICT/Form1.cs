@@ -41,7 +41,6 @@ namespace Car_Racing_Game_MOO_ICT
             {
                 goright = true;
             }
-
         }
 
         private void keyisup(object sender, KeyEventArgs e)
@@ -122,8 +121,6 @@ namespace Car_Racing_Game_MOO_ICT
                 trafficSpeed = 27;
                 roadSpeed = 25;
             }
-
-
         }
 
         private void changeAIcars(PictureBox tempCar)
@@ -148,7 +145,6 @@ namespace Car_Racing_Game_MOO_ICT
 
         private void ResetGame()
         {
-
             btnStart.Enabled = false;
             explosion.Visible = false;
             award.Visible = false;
@@ -178,7 +174,6 @@ namespace Car_Racing_Game_MOO_ICT
         {
             System.Media.SoundPlayer playCrash = new System.Media.SoundPlayer(Properties.Resources.hit);
             playCrash.Play();
-            
         }
     }
 }
