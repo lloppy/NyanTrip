@@ -17,13 +17,10 @@ namespace Car_Racing_Game_MOO_ICT
         int trafficSpeed;
         int playerSpeed = 12;
         int score;
-        int carImage;
 
-        Random rand = new Random();
         Random carPosition = new Random();
 
         bool goleft, goright;
-
 
         public Form1()
         {

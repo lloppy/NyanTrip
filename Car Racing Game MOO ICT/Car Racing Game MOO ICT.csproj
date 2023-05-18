@@ -55,6 +55,7 @@
     </Compile>
     <Compile Include="Game\AI.cs" />
     <Compile Include="Game\Controller.cs" />
+    <Compile Include="Game\Game.cs" />
     <Compile Include="Game\Player.cs" />
     <Compile Include="Game\Road.cs" />
     <Compile Include="Program.cs" />
