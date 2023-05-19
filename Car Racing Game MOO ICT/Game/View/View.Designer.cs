@@ -116,7 +116,7 @@ namespace Car_Racing_Game_MOO_ICT.Game.View
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(475, 138);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Press Left and Right to move the car. \r\n\r\nDon\'t hit any other cars in the game an" +
+            this.label2.Text = "Press Left and Right to move. \r\n\r\nCollect mushrooms in the game an" +
     "d survive as long as you can";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -232,7 +232,7 @@ namespace Car_Racing_Game_MOO_ICT.Game.View
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
-            this.Text = "Car Racing Game MOO ICT";
+            this.Text = "Mushroom Hunter Simulator";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
