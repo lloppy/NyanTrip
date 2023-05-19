@@ -84,6 +84,13 @@ public class Sun
             ChangeAISuns(SUN2);
         }
     }
+    
+    
+    public void StopMoveSun(PictureBox sun, Speed speed)
+    {
+        sun.Top = 0;
+        sun.Visible = false;
+    }
 
     private void ChangeAISuns(PictureBox tempSun)
     {

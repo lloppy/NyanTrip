@@ -57,12 +57,12 @@ namespace Car_Racing_Game_MOO_ICT.Game.Controller
 
             if (player.Bounds.IntersectsWith(sun1.Bounds))
             {
-                sun1.Visible = false;
+                sun.StopMoveSun(sun1, speed);
                 sun.IncreaseSun();
             }
             if (player.Bounds.IntersectsWith(sun2.Bounds))
             {
-                sun2.Visible = false;
+                sun.StopMoveSun(sun2, speed);
                 sun.IncreaseSun();
             }
         } 
