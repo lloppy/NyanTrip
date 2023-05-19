@@ -32,11 +32,11 @@ public class Sun
     {
         _sun++;
     }
-    
-    public int CurrentSunScore
+
+    private int CurrentSunScore
     {
         get => _sun;
-        private set => _sun = value;
+        set => _sun = value;
     }
     
     public void UpdateSunScore()

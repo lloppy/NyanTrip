@@ -55,13 +55,13 @@ namespace Car_Racing_Game_MOO_ICT.Game
 
             if (player.Bounds.IntersectsWith(sun1.Bounds))
             {
-                sun.IncreaseSun();
                 sun1.Visible = false;
+                sun.IncreaseSun();
             }
             if (player.Bounds.IntersectsWith(sun2.Bounds))
             {
-                sun.IncreaseSun();
                 sun2.Visible = false;
+                sun.IncreaseSun();
             }
         } 
         
