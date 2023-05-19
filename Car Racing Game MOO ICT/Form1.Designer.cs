@@ -215,7 +215,7 @@ namespace Car_Racing_Game_MOO_ICT
             // gameTimer
             // 
             this.gameTimer.Interval = 20;
-            this.gameTimer.Tick += new System.EventHandler(this.gameTimerEvent);
+            this.gameTimer.Tick += new System.EventHandler(this.GameTimerEvent);
             // 
             // Form1
             // 
@@ -229,8 +229,6 @@ namespace Car_Racing_Game_MOO_ICT
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.Text = "Car Racing Game MOO ICT";
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyisdown);
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.keyisup);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
