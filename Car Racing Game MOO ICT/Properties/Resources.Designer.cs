@@ -161,18 +161,20 @@ namespace Car_Racing_Game_MOO_ICT.Properties {
         /// <summary>
         ///   Looks up a localized string similar to {&quot;C:\Users\Полина\Downloads\Top-Down-Car-Racing\Top-Down\Car Racing Game MOO ICT\Resources\nyan_cat_left.gif&quot;}.
         /// </summary>
-        internal static string nyan_cat_left {
+        internal static System.Drawing.Bitmap nyan_cat_left {
             get {
-                return ResourceManager.GetString("nyan_cat_left", resourceCulture);
+                object obj = ResourceManager.GetObject("nyan_cat_left", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to {C:\Users\Полина\Downloads\Top-Down-Car-Racing\Top-Down\Car Racing Game MOO ICT\Resources\nyan_cat_right.gif}.
         /// </summary>
-        internal static string nyan_cat_right {
+        internal static System.Drawing.Bitmap nyan_cat_right {
             get {
-                return ResourceManager.GetString("nyan_cat_right", resourceCulture);
+                object obj = ResourceManager.GetObject("nyan_cat_right", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

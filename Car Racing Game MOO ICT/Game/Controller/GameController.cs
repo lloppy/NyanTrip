@@ -38,12 +38,12 @@ namespace Car_Racing_Game_MOO_ICT.Game.Controller
 
         public void GameOver(PictureBox AI1, PictureBox AI2)
         {
-            if (Player.Bounds.IntersectsWith(AI1.Bounds) || Player.Bounds.IntersectsWith(AI2.Bounds) || sun.getSunCount() == 100)
+            if (Player.Bounds.IntersectsWith(AI1.Bounds) || Player.Bounds.IntersectsWith(AI2.Bounds) || sun.getSunCount() == 41)
             {
                 gameOver();
             }
         }
-
+        
         private void gameOver()
         {
             playSound();

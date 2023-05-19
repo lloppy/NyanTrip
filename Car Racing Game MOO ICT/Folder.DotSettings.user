@@ -1,4 +1,11 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=e822e826_002D8e21_002D43f5_002Db27d_002D825e36cea76f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="SunTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::8B6FBAF2-24BD-48DB-BE0C-B2286FB44BAB::.NETFramework,Version=v4.7.2::Car_Racing_Game_MOO_ICT.Tests.SunTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::8B6FBAF2-24BD-48DB-BE0C-B2286FB44BAB::.NETFramework,Version=v4.7.2::Car_Racing_Game_MOO_ICT.Tests.SpeedTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::8B6FBAF2-24BD-48DB-BE0C-B2286FB44BAB::.NETFramework,Version=v4.7.2::Car_Racing_Game_MOO_ICT.Tests.ScoreTests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=Car_0020Racing_0020Game_0020MOO_0020ICT_002FForm1/@EntryIndexedValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=Car_0020Racing_0020Game_0020MOO_0020ICT_002FGame_002FView_002FView/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=Car_0020Racing_0020Game_0020MOO_0020ICT_002FProperties_002FResources/@EntryIndexedValue">False</s:Boolean>

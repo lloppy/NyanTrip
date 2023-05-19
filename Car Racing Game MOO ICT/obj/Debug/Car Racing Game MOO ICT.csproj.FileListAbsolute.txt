@@ -29,3 +29,6 @@ C:\Users\Полина\Downloads\Top-Down-Car-Racing\Top-Down\Car Racing Game MOO
 C:\Users\Полина\Downloads\Top-Down-Car-Racing\Top-Down\Car Racing Game MOO ICT\obj\Debug\Car Racing Game MOO ICT.exe
 C:\Users\Полина\Downloads\Top-Down-Car-Racing\Top-Down\Car Racing Game MOO ICT\obj\Debug\Car Racing Game MOO ICT.pdb
 C:\Users\Полина\Downloads\Top-Down-Car-Racing\Top-Down\Car Racing Game MOO ICT\obj\Debug\Car_Racing_Game_MOO_ICT.Game.View.Form1.resources
+C:\Users\Полина\Downloads\Top-Down-Car-Racing\Top-Down\Car Racing Game MOO ICT\bin\Debug\nunit.framework.dll
+C:\Users\Полина\Downloads\Top-Down-Car-Racing\Top-Down\Car Racing Game MOO ICT\bin\Debug\nunit.framework.xml
+C:\Users\Полина\Downloads\Top-Down-Car-Racing\Top-Down\Car Racing Game MOO ICT\obj\Debug\Car Racing Game MOO ICT.csproj.CopyComplete

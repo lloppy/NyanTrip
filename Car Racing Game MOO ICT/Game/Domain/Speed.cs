@@ -12,4 +12,19 @@ public class Speed
         this.trafficSpeed = trafficSpeed;
         this.playerSpeed = playerSpeed;
     }
+    
+    public void onPause()
+    {
+        roadSpeed = 0;
+        trafficSpeed = 0;
+        playerSpeed = 0;
+    }
+
+    public void onRestart(Speed lastSpeed)
+    {
+        this.roadSpeed = lastSpeed.roadSpeed;
+        this.trafficSpeed = lastSpeed.trafficSpeed;
+        this.playerSpeed = lastSpeed.playerSpeed;
+    }
+    
 }
