@@ -47,21 +47,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Game\Controller\Game.cs" />
+    <Compile Include="Game\Controller\MovementUtility.cs" />
+    <Compile Include="Game\Domain\AI.cs" />
+    <Compile Include="Game\Domain\Score.cs" />
+    <Compile Include="Game\Domain\Speed.cs" />
+    <Compile Include="Game\Domain\Sun.cs" />
+    <Compile Include="Game\View\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="Game\View\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Game\AI.cs" />
-    <Compile Include="Game\Game.cs" />
-    <Compile Include="Game\MovementUtility.cs" />
-    <Compile Include="Game\Speed.cs" />
-    <Compile Include="Game\Score.cs" />
-    <Compile Include="Game\Sun.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="Game\View\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

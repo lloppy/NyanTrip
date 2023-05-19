@@ -175,6 +175,7 @@ namespace Car_Racing_Game_MOO_ICT
             this.SUN1.Image = global::Car_Racing_Game_MOO_ICT.Properties.Resources.sun;
             this.SUN1.Location = new System.Drawing.Point(66, 52);
             this.SUN1.Name = "SUN1";
+            this.SUN1.BringToFront();
             this.SUN1.Size = new System.Drawing.Size(50, 101);
             this.SUN1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.SUN1.TabIndex = 5;
@@ -186,6 +187,7 @@ namespace Car_Racing_Game_MOO_ICT
             this.SUN2.Image = global::Car_Racing_Game_MOO_ICT.Properties.Resources.sun;
             this.SUN2.Location = new System.Drawing.Point(432, 72);
             this.SUN2.Name = "SUN2";
+            this.SUN2.BringToFront();
             this.SUN2.Size = new System.Drawing.Size(50, 100);
             this.SUN2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.SUN2.TabIndex = 5;
