@@ -20,7 +20,7 @@ public class Score
         private set => _score = value;
     }
     
-    public void UpdateScore(Label label)
+    public void UpdateScore()
     {
         _score++;
         ScoreUpdated?.Invoke(null, CurrentScore);

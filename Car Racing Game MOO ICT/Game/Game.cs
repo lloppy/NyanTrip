@@ -10,20 +10,18 @@ public class Game
     private PictureBox Award { get; }
     private Timer GameTimer { get; }
     private Button BtnStart { get; }
-    private Label SunScore { get; }
 
-    public Game(Timer gameTimer, PictureBox explosion, PictureBox player, PictureBox award, Button btnStart, Label sunScore)
+    private Score score; 
+    private Sun sun; 
+    
+    public Game(Timer gameTimer, PictureBox explosion, PictureBox player, PictureBox award, Button btnStart)
     {
         GameTimer = gameTimer;
         Explosion = explosion;
         Player = player;
         Award = award;
         BtnStart = btnStart;
-        SunScore = sunScore;
     }
-    
-    private Score score; 
-    private Sun sun; 
     
     public void gameOver()
     {
@@ -36,7 +34,7 @@ public class Game
 
         Award.Visible = true;
         Award.BringToFront();
-
+        
         BtnStart.Enabled = true;
     }
 
@@ -51,11 +49,9 @@ public class Game
         //trafficSpeed = 15;
         
         score = new Score(); 
-        sun = new Sun(); 
-        
+        sun = new Sun();
         score.ResetScore(); 
         sun.ResetSunScore();
-        sun.UpdateScore(SunScore);
     }
     
     private void playSound()

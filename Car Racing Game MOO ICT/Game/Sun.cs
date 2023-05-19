@@ -4,8 +4,10 @@ using System.Windows.Forms;
 namespace Car_Racing_Game_MOO_ICT.Game;
 
 public class Sun
-{
-    private int _sun;
+{    
+    private static int _sun;
+
+    public event EventHandler<int> SunScoreUpdated;
     private readonly Random _sunPosition = new Random();
     private PictureBox SunPictureBox { get; }
 
@@ -25,12 +27,23 @@ public class Sun
     {
         return _sun ;
     }
-    public void UpdateScore(Label label)
+
+    public void IncreaseSun()
     {
         _sun++;
-        label.Text = "Sun: " + _sun;
     }
-
+    
+    public int CurrentSunScore
+    {
+        get => _sun;
+        private set => _sun = value;
+    }
+    
+    public void UpdateSunScore()
+    {
+        SunScoreUpdated?.Invoke(null, CurrentSunScore);
+    }
+    
     private void SetPosition()
     {
         SunPictureBox.Top = _sunPosition.Next(100, 400) * -1;
@@ -47,7 +60,7 @@ public class Sun
     
     public void ResetSunScore()
     {
-        _sun = -1;
+        _sun = 0;
     }
 
     private void SetPicture()

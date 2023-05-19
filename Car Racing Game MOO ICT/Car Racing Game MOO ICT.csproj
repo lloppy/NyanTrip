@@ -54,8 +54,8 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Game\AI.cs" />
-    <Compile Include="Game\Controller.cs" />
     <Compile Include="Game\Game.cs" />
+    <Compile Include="Game\MovementUtility.cs" />
     <Compile Include="Game\Speed.cs" />
     <Compile Include="Game\Score.cs" />
     <Compile Include="Game\Sun.cs" />

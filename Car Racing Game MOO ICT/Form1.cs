@@ -6,10 +6,13 @@ namespace Car_Racing_Game_MOO_ICT {
     public partial class Form1 : Form { 
 
         private Speed speed; 
-        private Score score; 
+        private Score score;
         private Sun sun; 
         private AI ai; 
-        private Game.Game game; 
+        
+        private Game.Game game;
+        private MovementUtility movementUtility;
+        
         Random position = new Random(); 
         bool goleft, goright;
 
@@ -19,16 +22,21 @@ namespace Car_Racing_Game_MOO_ICT {
             score = new Score(); 
             sun = new Sun(); 
             ai = new AI(); 
-            game = new Game.Game(gameTimer, explosion, player, award, btnStart, sunScore); 
+            
+            game = new Game.Game(gameTimer, explosion, player, award, btnStart);
+            movementUtility = new MovementUtility(speed, player, roadTrack1, roadTrack2, SUN1, SUN2);
             score.ScoreUpdated += Score_ScoreUpdated; 
+            sun.SunScoreUpdated += Score_SunScoreUpdated; 
         } 
         
         private void gameTimerEvent(object sender, EventArgs e) { 
-            UpdateScore(); 
-            MovePlayer(); 
-            MoveRoad(); 
+            score.UpdateScore(); 
+            sun.UpdateSunScore(); 
+            
+            movementUtility.MovePlayer();
+            movementUtility.MoveRoad(); 
             ai.MoveTraffic(AI1, AI2, speed); 
-            MoveSun(); 
+            movementUtility.MoveSun(sun); 
             CheckCollisions(); 
             UpdateAward(); 
             CheckGameOver(); 
@@ -37,44 +45,12 @@ namespace Car_Racing_Game_MOO_ICT {
         private void Score_ScoreUpdated(object sender, int e) { 
             txtScore.Text = "Score: " + e; 
         }
-
-        private void UpdateScore() { 
-            score.UpdateScore(txtScore); 
+        
+        private void Score_SunScoreUpdated(object sender, int e) { 
+            sunScore.Text = "Sun: " + e; 
         }
-
-        private void MovePlayer() { 
-            if (goleft && player.Left > 10) { 
-                player.Left -= speed.playerSpeed; 
-            } 
-            if (goright && player.Left < 415) { 
-                player.Left += speed.playerSpeed; 
-            } 
-        } 
-
-        private void MoveRoad() { 
-            roadTrack1.Top += speed.roadSpeed; 
-            roadTrack2.Top += speed.roadSpeed; 
-            if (roadTrack2.Top > 519) { 
-                roadTrack2.Top = -519; 
-            } 
-            if (roadTrack1.Top > 519) { 
-                roadTrack1.Top = -519; 
-            } 
-        } 
-
-        private void MoveSun() { 
-            sun.MoveSun(SUN1, SUN2, speed);
-
-            if (player.Bounds.IntersectsWith(SUN1.Bounds)){ 
-                sun.UpdateScore(sunScore);
-                SUN1.Visible = false;
-            }
-            if (player.Bounds.IntersectsWith(SUN2.Bounds))
-            {
-                sun.UpdateScore(sunScore);
-                SUN2.Visible = false;
-            }
-        } 
+        
+        
 
         private void CheckCollisions() { 
             if (player.Bounds.IntersectsWith(AI1.Bounds) || player.Bounds.IntersectsWith(AI2.Bounds)) { 
@@ -125,26 +101,12 @@ namespace Car_Racing_Game_MOO_ICT {
 
         private void keyisdown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Left)
-            {
-                goleft = true;
-            }
-            if (e.KeyCode == Keys.Right)
-            {
-                goright = true;
-            }
+            movementUtility.KeyDown(e);
         }
 
         private void keyisup(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Left)
-            {
-                goleft = false;
-            }
-            if (e.KeyCode == Keys.Right)
-            {
-                goright = false;
-            }
+            movementUtility.KeyUp(e);
         }
     }
 }
