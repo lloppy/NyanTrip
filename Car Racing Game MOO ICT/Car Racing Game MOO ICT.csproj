@@ -53,16 +53,16 @@
     <Compile Include="Game\Domain\Score.cs" />
     <Compile Include="Game\Domain\Speed.cs" />
     <Compile Include="Game\Domain\Sun.cs" />
-    <Compile Include="Game\View\Form1.cs">
+    <Compile Include="Game\View\View.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Game\View\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Game\View\View.Designer.cs">
+      <DependentUpon>View.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Game\View\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Game\View\View.resx">
+      <DependentUpon>View.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -86,9 +86,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ambulance.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bronze.png" />
@@ -133,7 +130,10 @@
     <None Include="Resources\TruckWhite.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\nyan_cat_left.gif" />
+    <Content Include="Resources\nyan_cat_right.gif" />
     <Content Include="Resources\sun.png" />
+    <Content Include="Resources\user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

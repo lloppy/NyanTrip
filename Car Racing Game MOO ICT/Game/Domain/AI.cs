@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Drawing;
 using System.Windows.Forms;
 
-namespace Car_Racing_Game_MOO_ICT.Game
+namespace Car_Racing_Game_MOO_ICT.Game.Domain
 {
     public class AI
     {
@@ -43,11 +42,11 @@ namespace Car_Racing_Game_MOO_ICT.Game
 
         private void SetPicture()
         {
-            var carImageNumber = _rand.Next(1, 10);
+            var carImageNumber = _rand.Next(1, 9);
 
             Car.Image = carImageNumber switch
             {
-                1 => Properties.Resources.ambulance,
+                1 => Properties.Resources.TruckWhite,
                 2 => Properties.Resources.carGreen,
                 3 => Properties.Resources.carGrey,
                 4 => Properties.Resources.carOrange,
@@ -55,7 +54,6 @@ namespace Car_Racing_Game_MOO_ICT.Game
                 6 => Properties.Resources.CarRed,
                 7 => Properties.Resources.carYellow,
                 8 => Properties.Resources.TruckBlue,
-                9 => Properties.Resources.TruckWhite,
                 _ => Car.Image
             };
         }

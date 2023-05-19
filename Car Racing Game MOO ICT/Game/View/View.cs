@@ -1,8 +1,9 @@
-﻿using System; 
-using System.Windows.Forms; 
-using Car_Racing_Game_MOO_ICT.Game;
+﻿using System;
+using System.Windows.Forms;
+using Car_Racing_Game_MOO_ICT.Game.Controller;
+using Car_Racing_Game_MOO_ICT.Game.Domain;
 
-namespace Car_Racing_Game_MOO_ICT {
+namespace Car_Racing_Game_MOO_ICT.Game.View {
     public partial class Form1 : Form
     {
         private Speed speed;
@@ -10,7 +11,7 @@ namespace Car_Racing_Game_MOO_ICT {
         private Sun sun;
         private AI ai;
 
-        private Game.Game game;
+        private Game.Controller.Game game;
         private MovementUtility movementUtility;
 
         Random position = new Random();
@@ -29,7 +30,7 @@ namespace Car_Racing_Game_MOO_ICT {
             KeyUp += (sender, e) => movementUtility.KeyUp(e);
 
             movementUtility = new MovementUtility(speed, player, roadTrack1, roadTrack2, SUN1, SUN2);
-            game = new Game.Game(gameTimer, explosion, player, award, btnStart, speed);
+            game = new Game.Controller.Game(gameTimer, explosion, player, award, btnStart, speed);
         }
 
         private void GameTimerEvent(object sender, EventArgs e)

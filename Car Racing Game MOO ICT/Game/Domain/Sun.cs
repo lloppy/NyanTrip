@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Car_Racing_Game_MOO_ICT.Game;
+namespace Car_Racing_Game_MOO_ICT.Game.Domain;
 
 public class Sun
 {    
     private static int _sun;
-
     public event EventHandler<int> SunScoreUpdated;
     private readonly Random _sunPosition = new Random();
     private PictureBox SunPictureBox { get; }

@@ -1,6 +1,7 @@
 ﻿using System.Windows.Forms;
+using Car_Racing_Game_MOO_ICT.Game.Domain;
 
-namespace Car_Racing_Game_MOO_ICT.Game
+namespace Car_Racing_Game_MOO_ICT.Game.Controller
 {
     public class MovementUtility
     {
@@ -40,13 +41,14 @@ namespace Car_Racing_Game_MOO_ICT.Game
         {
             roadTrack1.Top += speed.roadSpeed;
             roadTrack2.Top += speed.roadSpeed;
-            if (roadTrack2.Top > 519)
+            var size = 519;
+            if (roadTrack2.Top > size)
             {
-                roadTrack2.Top = -519;
+                roadTrack2.Top = -size;
             }
-            if (roadTrack1.Top > 519)
+            if (roadTrack1.Top > size)
             {
-                roadTrack1.Top = -519;
+                roadTrack1.Top = -size;
             }
         }
         

@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Car_Racing_Game_MOO_ICT.Game.Domain;
 
-namespace Car_Racing_Game_MOO_ICT.Game
+namespace Car_Racing_Game_MOO_ICT.Game.Controller
 {
     public class Game
     {

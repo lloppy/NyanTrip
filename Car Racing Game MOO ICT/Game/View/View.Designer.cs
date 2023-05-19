@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace Car_Racing_Game_MOO_ICT
+namespace Car_Racing_Game_MOO_ICT.Game.View
 {
     partial class Form1
     {
@@ -74,6 +74,8 @@ namespace Car_Racing_Game_MOO_ICT
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(475, 519);
             this.panel1.TabIndex = 0;
+            // this.panel1.BackColor = Color.Green;
+            this.panel1.BackColor = Color.Green;
             // 
             // btnStart
             // 
@@ -140,7 +142,7 @@ namespace Car_Racing_Game_MOO_ICT
             // 
             // player
             // 
-            this.player.Image = global::Car_Racing_Game_MOO_ICT.Properties.Resources.carYellow;
+            this.player.Image = global::Car_Racing_Game_MOO_ICT.Properties.Resources.user;
             this.player.Location = new System.Drawing.Point(215, 402);
             this.player.Name = "player";
             this.player.Size = new System.Drawing.Size(50, 99);

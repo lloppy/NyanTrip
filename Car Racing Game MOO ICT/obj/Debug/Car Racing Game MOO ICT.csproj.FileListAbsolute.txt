@@ -23,9 +23,9 @@ C:\Users\Полина\Downloads\Top-Down-Car-Racing\Top-Down\Car Racing Game MOO
 C:\Users\Полина\Downloads\Top-Down-Car-Racing\Top-Down\Car Racing Game MOO ICT\bin\Debug\Car Racing Game MOO ICT.pdb
 C:\Users\Полина\Downloads\Top-Down-Car-Racing\Top-Down\Car Racing Game MOO ICT\obj\Debug\Car Racing Game MOO ICT.csproj.AssemblyReference.cache
 C:\Users\Полина\Downloads\Top-Down-Car-Racing\Top-Down\Car Racing Game MOO ICT\obj\Debug\Car Racing Game MOO ICT.csproj.SuggestedBindingRedirects.cache
-C:\Users\Полина\Downloads\Top-Down-Car-Racing\Top-Down\Car Racing Game MOO ICT\obj\Debug\Car_Racing_Game_MOO_ICT.Form1.resources
 C:\Users\Полина\Downloads\Top-Down-Car-Racing\Top-Down\Car Racing Game MOO ICT\obj\Debug\Car_Racing_Game_MOO_ICT.Properties.Resources.resources
 C:\Users\Полина\Downloads\Top-Down-Car-Racing\Top-Down\Car Racing Game MOO ICT\obj\Debug\Car Racing Game MOO ICT.csproj.GenerateResource.cache
 C:\Users\Полина\Downloads\Top-Down-Car-Racing\Top-Down\Car Racing Game MOO ICT\obj\Debug\Car Racing Game MOO ICT.csproj.CoreCompileInputs.cache
 C:\Users\Полина\Downloads\Top-Down-Car-Racing\Top-Down\Car Racing Game MOO ICT\obj\Debug\Car Racing Game MOO ICT.exe
 C:\Users\Полина\Downloads\Top-Down-Car-Racing\Top-Down\Car Racing Game MOO ICT\obj\Debug\Car Racing Game MOO ICT.pdb
+C:\Users\Полина\Downloads\Top-Down-Car-Racing\Top-Down\Car Racing Game MOO ICT\obj\Debug\Car_Racing_Game_MOO_ICT.Game.View.Form1.resources
