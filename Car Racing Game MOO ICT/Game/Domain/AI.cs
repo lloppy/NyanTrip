@@ -6,13 +6,13 @@ namespace Car_Racing_Game_MOO_ICT.Game.Domain
     public class AI
     {
         private readonly Random _rand = new Random();
-        private readonly Random _carPosition = new Random();
+        private readonly Random _mushroomPosition = new Random();
 
-        private PictureBox Car { get; }
+        private PictureBox Mushroom { get; }
 
-        public AI(PictureBox car)
+        public AI(PictureBox mushroom)
         {
-            Car = car;
+            Mushroom = mushroom;
             SetPicture();
             SetPosition();
         }
@@ -21,40 +21,40 @@ namespace Car_Racing_Game_MOO_ICT.Game.Domain
 
         private void SetPosition()
         {
-            Car.Top = _carPosition.Next(100, 400) * -1;
+            Mushroom.Top = _mushroomPosition.Next(100, 400) * -1;
 
-            if ((string)Car.Tag == "carLeft")
+            if ((string)Mushroom.Tag == "mushroomLeft")
             {
-                Car.Left = _carPosition.Next(5, 200);
+                Mushroom.Left = _mushroomPosition.Next(5, 200);
             }
-            else if ((string)Car.Tag == "carRight")
+            else if ((string)Mushroom.Tag == "mushroomRight")
             {
-                Car.Left = _carPosition.Next(245, 422);
+                Mushroom.Left = _mushroomPosition.Next(245, 422);
             }
         }
 
-        public void ResetPosition(PictureBox AI, Random carPosition, int leftX, int leftY)
+        public void ResetPosition(PictureBox AI, Random mushroomPosition, int leftX, int leftY)
         {
-            AI.Top = carPosition.Next(200, 500) * -1;
-            AI.Left = carPosition.Next(leftX, leftY);
+            AI.Top = mushroomPosition.Next(200, 500) * -1;
+            AI.Left = mushroomPosition.Next(leftX, leftY);
         }
 
 
         private void SetPicture()
         {
-            var carImageNumber = _rand.Next(1, 9);
+            var mushroomImageNumber = _rand.Next(1, 9);
 
-            Car.Image = carImageNumber switch
+            Mushroom.Image = mushroomImageNumber switch
             {
-                1 => Properties.Resources.TruckWhite,
-                2 => Properties.Resources.carGreen,
-                3 => Properties.Resources.carGrey,
-                4 => Properties.Resources.carOrange,
-                5 => Properties.Resources.carPink,
-                6 => Properties.Resources.CarRed,
-                7 => Properties.Resources.carYellow,
-                8 => Properties.Resources.TruckBlue,
-                _ => Car.Image
+                1 => Properties.Resources.mushroomWhite,
+                2 => Properties.Resources.mushroomGreen,
+                3 => Properties.Resources.mushroomGrey,
+                4 => Properties.Resources.mushroomOrange,
+                5 => Properties.Resources.mushroomPink,
+                6 => Properties.Resources.mushroomRed,
+                7 => Properties.Resources.mushroomYellow,
+                8 => Properties.Resources.mushroomBlue,
+                _ => Mushroom.Image
             };
         }
 
@@ -64,17 +64,17 @@ namespace Car_Racing_Game_MOO_ICT.Game.Domain
             AI2.Top += speed.trafficSpeed;
             if (AI1.Top > 530)
             {
-                ChangeAICars(AI1);
+                ChangeAIMushrooms(AI1);
             }
             if (AI2.Top > 530)
             {
-                ChangeAICars(AI2);
+                ChangeAIMushrooms(AI2);
             }
         }
         
-        private void ChangeAICars(PictureBox tempCar)
+        private void ChangeAIMushrooms(PictureBox tempMushroom)
         {
-            var ai = new AI(tempCar);
+            var ai = new AI(tempMushroom);
         }
     }
 }

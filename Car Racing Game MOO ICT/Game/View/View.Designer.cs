@@ -152,25 +152,25 @@ namespace Car_Racing_Game_MOO_ICT.Game.View
             // 
             // AI1
             // 
-            this.AI1.Image = global::Car_Racing_Game_MOO_ICT.Properties.Resources.carGreen;
+            this.AI1.Image = global::Car_Racing_Game_MOO_ICT.Properties.Resources.mushroomGreen;
             this.AI1.Location = new System.Drawing.Point(76, 62);
             this.AI1.Name = "AI1";
             this.AI1.Size = new System.Drawing.Size(50, 101);
             this.AI1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.AI1.TabIndex = 5;
             this.AI1.TabStop = false;
-            this.AI1.Tag = "carLeft";
+            this.AI1.Tag = "mushroomLeft";
             // 
             // AI2
             // 
-            this.AI2.Image = global::Car_Racing_Game_MOO_ICT.Properties.Resources.carGrey;
+            this.AI2.Image = global::Car_Racing_Game_MOO_ICT.Properties.Resources.mushroomGrey;
             this.AI2.Location = new System.Drawing.Point(422, 62);
             this.AI2.Name = "AI2";
             this.AI2.Size = new System.Drawing.Size(50, 100);
             this.AI2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.AI2.TabIndex = 5;
             this.AI2.TabStop = false;
-            this.AI2.Tag = "carRight";
+            this.AI2.Tag = "mushroomRight";
             // 
             // SUN1
             // 

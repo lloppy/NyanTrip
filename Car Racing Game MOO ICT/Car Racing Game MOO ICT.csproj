@@ -91,22 +91,22 @@
     <None Include="Resources\bronze.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\carGreen.png" />
+    <None Include="Resources\mushroomGreen.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\carGrey.png" />
+    <None Include="Resources\mushroomGrey.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\carOrange.png" />
+    <None Include="Resources\mushroomOrange.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\carPink.png" />
+    <None Include="Resources\mushroomPink.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\CarRed.png" />
+    <None Include="Resources\mushroomRed.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\carYellow.png" />
+    <None Include="Resources\mushroomYellow.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\explosion.gif" />
@@ -124,10 +124,10 @@
     <None Include="Resources\silver.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\TruckBlue.png" />
+    <None Include="Resources\mushroomBlue.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\TruckWhite.png" />
+    <None Include="Resources\mushroomWhite.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\nyan_cat_left.gif" />

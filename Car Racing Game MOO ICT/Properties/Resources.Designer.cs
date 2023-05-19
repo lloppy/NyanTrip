@@ -72,9 +72,9 @@ namespace Car_Racing_Game_MOO_ICT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap carGreen {
+        internal static System.Drawing.Bitmap mushroomGreen {
             get {
-                object obj = ResourceManager.GetObject("carGreen", resourceCulture);
+                object obj = ResourceManager.GetObject("mushroomGreen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -82,9 +82,9 @@ namespace Car_Racing_Game_MOO_ICT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap carGrey {
+        internal static System.Drawing.Bitmap mushroomGrey {
             get {
-                object obj = ResourceManager.GetObject("carGrey", resourceCulture);
+                object obj = ResourceManager.GetObject("mushroomGrey", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -92,9 +92,9 @@ namespace Car_Racing_Game_MOO_ICT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap carOrange {
+        internal static System.Drawing.Bitmap mushroomOrange {
             get {
-                object obj = ResourceManager.GetObject("carOrange", resourceCulture);
+                object obj = ResourceManager.GetObject("mushroomOrange", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -102,9 +102,9 @@ namespace Car_Racing_Game_MOO_ICT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap carPink {
+        internal static System.Drawing.Bitmap mushroomPink {
             get {
-                object obj = ResourceManager.GetObject("carPink", resourceCulture);
+                object obj = ResourceManager.GetObject("mushroomPink", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -112,9 +112,9 @@ namespace Car_Racing_Game_MOO_ICT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap CarRed {
+        internal static System.Drawing.Bitmap mushroomRed {
             get {
-                object obj = ResourceManager.GetObject("CarRed", resourceCulture);
+                object obj = ResourceManager.GetObject("mushroomRed", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -122,9 +122,9 @@ namespace Car_Racing_Game_MOO_ICT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap carYellow {
+        internal static System.Drawing.Bitmap mushroomYellow {
             get {
-                object obj = ResourceManager.GetObject("carYellow", resourceCulture);
+                object obj = ResourceManager.GetObject("mushroomYellow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -159,7 +159,7 @@ namespace Car_Racing_Game_MOO_ICT.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {C:\Users\Полина\Downloads\Top-Down-Car-Racing\Top-Down\Car Racing Game MOO ICT\Resources\nyan_cat_left.gif}.
+        ///   Looks up a localized string similar to {&quot;C:\Users\Полина\Downloads\Top-Down-Car-Racing\Top-Down\Car Racing Game MOO ICT\Resources\nyan_cat_left.gif&quot;}.
         /// </summary>
         internal static string nyan_cat_left {
             get {
@@ -209,9 +209,9 @@ namespace Car_Racing_Game_MOO_ICT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap TruckBlue {
+        internal static System.Drawing.Bitmap mushroomBlue {
             get {
-                object obj = ResourceManager.GetObject("TruckBlue", resourceCulture);
+                object obj = ResourceManager.GetObject("mushroomBlue", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -219,9 +219,9 @@ namespace Car_Racing_Game_MOO_ICT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap TruckWhite {
+        internal static System.Drawing.Bitmap mushroomWhite {
             get {
-                object obj = ResourceManager.GetObject("TruckWhite", resourceCulture);
+                object obj = ResourceManager.GetObject("mushroomWhite", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

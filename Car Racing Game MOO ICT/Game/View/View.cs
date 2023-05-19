@@ -46,8 +46,6 @@ namespace Car_Racing_Game_MOO_ICT.Game.View {
             game.UpdateAward();
         }
         
-        
-        
         private void ResetGame(object sender, EventArgs e)
         {
             game.ResetGame();
