@@ -3,14 +3,14 @@ using System.Windows.Forms;
 
 namespace Car_Racing_Game_MOO_ICT.Game.Domain
 {
-    public class AI
+    public class Mushrooms
     {
         private readonly Random _rand = new Random();
         private readonly Random _mushroomPosition = new Random();
 
         private PictureBox Mushroom { get; }
 
-        public AI(PictureBox mushroom)
+        public Mushrooms(PictureBox mushroom)
         {
             Mushroom = mushroom;
             SetPicture();
@@ -74,7 +74,7 @@ namespace Car_Racing_Game_MOO_ICT.Game.Domain
         
         private void ChangeAIMushrooms(PictureBox tempMushroom)
         {
-            var ai = new AI(tempMushroom);
+            var ai = new Mushrooms(tempMushroom);
         }
     }
 }

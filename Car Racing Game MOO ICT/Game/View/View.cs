@@ -9,7 +9,7 @@ namespace Car_Racing_Game_MOO_ICT.Game.View {
         private Speed speed;
         private Score score;
         private Sun sun;
-        private AI ai;
+        private Mushrooms mushrooms;
 
         private Game.Controller.Game game;
         private MovementUtility movementUtility;
@@ -22,7 +22,7 @@ namespace Car_Racing_Game_MOO_ICT.Game.View {
             speed = new Speed(12, 15, 12);
             score = new Score();
             sun = new Sun();
-            ai = new AI();
+            mushrooms = new Mushrooms();
             score.ScoreUpdated += (sender, e) => txtScore.Text = "Score: " + e;
             sun.SunScoreUpdated += (sender, e) => sunScore.Text = "Sun: " + e;
 
@@ -40,7 +40,7 @@ namespace Car_Racing_Game_MOO_ICT.Game.View {
 
             movementUtility.MovePlayer();
             movementUtility.MoveRoad();
-            ai.MoveTraffic(AI1, AI2, speed);
+            mushrooms.MoveTraffic(AI1, AI2, speed);
             movementUtility.MoveSun(sun);
             game.GameOver(AI1, AI2);
             game.UpdateAward();
