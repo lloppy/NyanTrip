@@ -17,7 +17,7 @@ namespace Car_Racing_Game_MOO_ICT.Game.Domain
             SetPosition();
         }
         
-        public AI(){}
+        public Mushrooms(){}
 
         private void SetPosition()
         {
