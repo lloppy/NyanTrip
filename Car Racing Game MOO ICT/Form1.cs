@@ -41,9 +41,8 @@ namespace Car_Racing_Game_MOO_ICT {
             movementUtility.MoveRoad();
             ai.MoveTraffic(AI1, AI2, speed);
             movementUtility.MoveSun(sun);
-            game.CheckCollisions(AI1, AI2);
+            game.GameOver(AI1, AI2);
             game.UpdateAward();
-            game.CheckGameOver();
         }
         
         
