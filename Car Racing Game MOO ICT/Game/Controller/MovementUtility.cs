@@ -59,12 +59,16 @@ namespace Car_Racing_Game_MOO_ICT.Game.Controller
             {
                 sun.StopMoveSun(sun1, speed);
                 sun.IncreaseSun();
+                sun.CreateNewSunPosition(sun1);
             }
             if (player.Bounds.IntersectsWith(sun2.Bounds))
             {
                 sun.StopMoveSun(sun2, speed);
                 sun.IncreaseSun();
+                sun.IncreaseSun();
+                sun.CreateNewSunPosition(sun2);
             }
+
         } 
         
         public void KeyDown(KeyEventArgs e)

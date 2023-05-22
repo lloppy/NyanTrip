@@ -84,8 +84,7 @@ public class Sun
             ChangeAISuns(SUN2);
         }
     }
-    
-    
+
     public void StopMoveSun(PictureBox sun, Speed speed)
     {
         sun.Top = 0;
@@ -95,5 +94,11 @@ public class Sun
     private void ChangeAISuns(PictureBox tempSun)
     {
         var ai = new Sun(tempSun);
+    }
+
+    public void CreateNewSunPosition(PictureBox sun)
+    {
+        sun.Top = -530;
+        sun.Left = _sunPosition.Next(5, 420);
     }
 }

@@ -153,7 +153,7 @@ namespace Car_Racing_Game_MOO_ICT.Game.View
             // AI1
             // 
             this.AI1.Image = global::Car_Racing_Game_MOO_ICT.Properties.Resources.mushroomGreen;
-            this.AI1.Location = new System.Drawing.Point(76, 62);
+            this.AI1.Location = new System.Drawing.Point(86, 42);
             this.AI1.Name = "AI1";
             this.AI1.Size = new System.Drawing.Size(50, 101);
             this.AI1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -164,7 +164,7 @@ namespace Car_Racing_Game_MOO_ICT.Game.View
             // AI2
             // 
             this.AI2.Image = global::Car_Racing_Game_MOO_ICT.Properties.Resources.mushroomGrey;
-            this.AI2.Location = new System.Drawing.Point(422, 62);
+            this.AI2.Location = new System.Drawing.Point(370, 82);
             this.AI2.Name = "AI2";
             this.AI2.Size = new System.Drawing.Size(50, 100);
             this.AI2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -175,7 +175,7 @@ namespace Car_Racing_Game_MOO_ICT.Game.View
             // SUN1
             // 
             this.SUN1.Image = global::Car_Racing_Game_MOO_ICT.Properties.Resources.sun;
-            this.SUN1.Location = new System.Drawing.Point(66, 52);
+            this.SUN1.Location = new System.Drawing.Point(20, 232);
             this.SUN1.Name = "SUN1";
             this.SUN1.BringToFront();
             this.SUN1.Size = new System.Drawing.Size(50, 101);
@@ -187,7 +187,7 @@ namespace Car_Racing_Game_MOO_ICT.Game.View
             // SUN2
             // 
             this.SUN2.Image = global::Car_Racing_Game_MOO_ICT.Properties.Resources.sun;
-            this.SUN2.Location = new System.Drawing.Point(432, 72);
+            this.SUN2.Location = new System.Drawing.Point(402, 402);
             this.SUN2.Name = "SUN2";
             this.SUN2.BringToFront();
             this.SUN2.Size = new System.Drawing.Size(50, 100);
