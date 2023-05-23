@@ -66,9 +66,7 @@ namespace Car_Racing_Game_MOO_ICT.Tests
         {
             var sun = new PictureBox { Top = 100, Visible = true };
             var speed = new Speed(12, 15, 12);
-
-            _sun.StopMoveSun(sun, speed);
-
+            
             Assert.AreEqual(0, sun.Top);
             Assert.IsFalse(sun.Visible);
         }

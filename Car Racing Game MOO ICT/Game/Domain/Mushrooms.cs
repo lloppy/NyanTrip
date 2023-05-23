@@ -25,21 +25,26 @@ namespace Car_Racing_Game_MOO_ICT.Game.Domain
 
             if ((string)Mushroom.Tag == "mushroomLeft")
             {
-                Mushroom.Left = _mushroomPosition.Next(5, 200);
+                Mushroom.Left = _mushroomPosition.Next(5, 170);
             }
             else if ((string)Mushroom.Tag == "mushroomRight")
             {
-                Mushroom.Left = _mushroomPosition.Next(245, 422);
+                Mushroom.Left = _mushroomPosition.Next(275, 422);
             }
         }
-
-        public void ResetPosition(PictureBox AI, Random mushroomPosition, int leftX, int leftY)
+        
+        public void CreateNewMushroomPosition(PictureBox mushroom)
         {
-            AI.Top = mushroomPosition.Next(200, 500) * -1;
-            AI.Left = mushroomPosition.Next(leftX, leftY);
-        }
-
-
+            mushroom.Top = -100;
+            if ((string)mushroom.Tag == "mushroomLeft")
+            {
+                mushroom.Left = _mushroomPosition.Next(5, 135);
+            }
+            else if ((string)mushroom.Tag == "mushroomRight")
+            {
+                mushroom.Left = _mushroomPosition.Next(230, 360);
+            }        }
+        
         private void SetPicture()
         {
             var mushroomImageNumber = _rand.Next(1, 9);
@@ -64,11 +69,11 @@ namespace Car_Racing_Game_MOO_ICT.Game.Domain
             AI2.Top += speed.trafficSpeed;
             if (AI1.Top > 530)
             {
-                ChangeAIMushrooms(AI1);
+               ChangeAIMushrooms(AI1);
             }
             if (AI2.Top > 530)
             {
-                ChangeAIMushrooms(AI2);
+               ChangeAIMushrooms(AI2);
             }
         }
         

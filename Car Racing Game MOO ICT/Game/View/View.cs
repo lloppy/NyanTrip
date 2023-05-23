@@ -28,8 +28,8 @@ namespace Car_Racing_Game_MOO_ICT.Game.View {
 
             KeyDown += (sender, e) => movementUtility.KeyDown(e);
             KeyUp += (sender, e) => movementUtility.KeyUp(e);
-
-            movementUtility = new MovementUtility(speed, player, roadTrack1, roadTrack2, SUN1, SUN2);
+            
+            movementUtility = new MovementUtility(speed, player, roadTrack1, roadTrack2, SUN1, SUN2, AI1, AI2);
             game = new Game.Controller.Game(gameTimer, explosion, player, award, btnStart, speed);
         }
 
@@ -40,7 +40,7 @@ namespace Car_Racing_Game_MOO_ICT.Game.View {
 
             movementUtility.MovePlayer();
             movementUtility.MoveRoad();
-            mushrooms.MoveTraffic(AI1, AI2, speed);
+            movementUtility.MoveMushroom(mushrooms);
             movementUtility.MoveSun(sun);
             game.GameOver(AI1, AI2);
             game.UpdateAward();
@@ -53,5 +53,8 @@ namespace Car_Racing_Game_MOO_ICT.Game.View {
             
             gameTimer.Start();
         }
+        
+        public void PauseGame() => gameTimer.Stop();
+        public void RepauseGame() => gameTimer.Start();
     }
 }

@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="nunit.framework, Version=3.13.3.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>packages\NUnit.3.13.3\lib\net45\nunit.framework.dll</HintPath>
     </Reference>
@@ -53,6 +56,7 @@
   <ItemGroup>
     <Compile Include="Game\Controller\GameController.cs" />
     <Compile Include="Game\Controller\MovementUtility.cs" />
+    <Compile Include="Game\Domain\InputMiniGame.cs" />
     <Compile Include="Game\Domain\Mushrooms.cs" />
     <Compile Include="Game\Domain\Score.cs" />
     <Compile Include="Game\Domain\Speed.cs" />

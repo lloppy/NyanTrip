@@ -31,6 +31,11 @@ public class Sun
     {
         _sun++;
     }
+    
+    public void IncreaseSunFromMushroom()
+    {
+        _sun+= 10;
+    }
 
     private int CurrentSunScore
     {
@@ -85,12 +90,6 @@ public class Sun
         }
     }
 
-    public void StopMoveSun(PictureBox sun, Speed speed)
-    {
-        sun.Top = 0;
-        sun.Visible = false;
-    }
-
     private void ChangeAISuns(PictureBox tempSun)
     {
         var ai = new Sun(tempSun);
@@ -98,7 +97,15 @@ public class Sun
 
     public void CreateNewSunPosition(PictureBox sun)
     {
-        sun.Top = -530;
-        sun.Left = _sunPosition.Next(5, 420);
+        sun.Top = -100;
+        
+        if ((string)sun.Tag == "sunLeft")
+        {
+            sun.Left = _sunPosition.Next(5, 135);
+        }
+        else if ((string)sun.Tag == "sunRight")
+        {
+            sun.Left = _sunPosition.Next(230, 360);
+        }    
     }
 }

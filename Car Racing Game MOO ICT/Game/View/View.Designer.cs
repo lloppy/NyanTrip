@@ -97,6 +97,7 @@ namespace Car_Racing_Game_MOO_ICT.Game.View
             this.txtScore.Size = new System.Drawing.Size(475, 37);
             this.txtScore.TabIndex = 2;
             this.txtScore.Text = "Score: 0";
+            this.txtScore.Visible = false;
             this.txtScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // sunScore
