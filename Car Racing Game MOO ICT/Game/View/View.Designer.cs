@@ -31,7 +31,7 @@ namespace Car_Racing_Game_MOO_ICT.Game.View
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1 = new TransparentPanel();
             this.btnStart = new System.Windows.Forms.Button();
             this.txtScore = new System.Windows.Forms.Label();
             this.sunScore = new System.Windows.Forms.Label();
@@ -60,7 +60,6 @@ namespace Car_Racing_Game_MOO_ICT.Game.View
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Black;
             this.panel1.Controls.Add(this.AI2);
             this.panel1.Controls.Add(this.AI1);
             this.panel1.Controls.Add(this.SUN2);
@@ -74,8 +73,7 @@ namespace Car_Racing_Game_MOO_ICT.Game.View
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(475, 519);
             this.panel1.TabIndex = 0;
-            // this.panel1.BackColor = Color.Green;
-            this.panel1.BackColor = Color.Green;
+            this.panel1.BackColor = Color.Transparent;
             // 
             // btnStart
             // 
@@ -84,9 +82,9 @@ namespace Car_Racing_Game_MOO_ICT.Game.View
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(475, 41);
             this.btnStart.TabIndex = 1;
-            this.btnStart.ForeColor = Color.Indigo;
+            this.btnStart.ForeColor = Color.White;
             this.btnStart.Text = "Start";
-            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.BackColor = Color.Indigo;
             this.btnStart.Click += new System.EventHandler(this.ResetGame);
             // 
             // txtScore
@@ -249,7 +247,7 @@ namespace Car_Racing_Game_MOO_ICT.Game.View
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private Car_Racing_Game_MOO_ICT.Game.View.TransparentPanel panel1;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Label txtScore;
         private System.Windows.Forms.Label sunScore;
@@ -266,4 +264,3 @@ namespace Car_Racing_Game_MOO_ICT.Game.View
         private System.Windows.Forms.Timer gameTimer;
     }
 }
-

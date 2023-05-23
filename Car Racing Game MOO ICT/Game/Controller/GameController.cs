@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using Car_Racing_Game_MOO_ICT.Game.Domain;
+using Car_Racing_Game_MOO_ICT.Game.View;
 
 namespace Car_Racing_Game_MOO_ICT.Game.Controller
 {
@@ -35,25 +36,25 @@ namespace Car_Racing_Game_MOO_ICT.Game.Controller
             Speed.roadSpeed = endScore > 500 ? 18 : endScore > 2000 ? 23 : 13;
             Speed.trafficSpeed = endScore > 500 ? 20 : endScore > 2000 ? 25 : 16;
         }
-
         
-        public void GameNyanCat(PictureBox AI1, PictureBox AI2, PictureBox SUN1, PictureBox SUN2, 
-            PictureBox RoadTrack1, PictureBox RoadTrack2)
+        public void GameNyanCat(TransparentPanel panel)
         {
-            AI1.Visible = false;
-            AI2.Visible = false;
-            SUN1.Visible = false;
-            SUN2.Visible = false;
-            RoadTrack1.Visible = false;
-            RoadTrack2.Visible = false;
+            GameTimer.Stop();
+
+            var form = new Form1();
+            panel.Controls.Clear();
             
-            if (sun.getSunCount() >= 501)
+            panel.BackColor = Color.CornflowerBlue;
+
+            var catCreator = new NyanCat(panel, new Random());
+            for (var i = 0; i < 20; i++)
             {
-                gameOver();
-            }        
+                catCreator.CreateNyanCat(i*40);
+            }
+            //if (sun.getSunCount() >= 501) gameOver();
         }
 
-        private void gameOver()
+       private void gameOver()
         {
             playSound();
             GameTimer.Stop();

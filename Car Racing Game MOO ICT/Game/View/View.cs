@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using Car_Racing_Game_MOO_ICT.Game.Controller;
 using Car_Racing_Game_MOO_ICT.Game.Domain;
@@ -10,7 +11,6 @@ namespace Car_Racing_Game_MOO_ICT.Game.View {
         private Score score;
         private Sun sun;
         private Mushrooms mushrooms;
-
         private Game.Controller.Game game;
         private MovementUtility movementUtility;
 
@@ -57,11 +57,10 @@ namespace Car_Racing_Game_MOO_ICT.Game.View {
 
         private void GameOver()
         {
-            if (sun.getSunCount() >= 201)
+            if (sun.getSunCount() >= 21)
             {
-                game.GameNyanCat(AI1, AI2, SUN1, SUN2, roadTrack1, roadTrack2);
+                game.GameNyanCat(panel1);
             }
         }
-        
     }
 }

@@ -58,9 +58,11 @@
     <Compile Include="Game\Controller\MovementUtility.cs" />
     <Compile Include="Game\Domain\InputMiniGame.cs" />
     <Compile Include="Game\Domain\Mushrooms.cs" />
+    <Compile Include="Game\Domain\NyanCats.cs" />
     <Compile Include="Game\Domain\Score.cs" />
     <Compile Include="Game\Domain\Speed.cs" />
     <Compile Include="Game\Domain\Sun.cs" />
+    <Compile Include="Game\View\TransparentPanel.cs" />
     <Compile Include="Game\View\View.cs">
       <SubType>Form</SubType>
     </Compile>
