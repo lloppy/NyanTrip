@@ -47,9 +47,9 @@ namespace Car_Racing_Game_MOO_ICT.Game.Controller
             panel.BackColor = Color.CornflowerBlue;
 
             var catCreator = new NyanCat(panel, new Random());
-            for (var i = 0; i < 20; i++)
+            for (var i = 0; i < 5; i++)
             {
-                catCreator.CreateNyanCat(i*40);
+                catCreator.CreateNyanCat(i * 50 + 10);
             }
             //if (sun.getSunCount() >= 501) gameOver();
         }

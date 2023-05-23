@@ -9,6 +9,10 @@ public class NyanCat
 {
     private readonly Panel _panel;
     private readonly Random _random;
+    private Timer timer;
+    private bool goingRight = true;
+    private int jumpCount = 0;
+
     public NyanCat(TransparentPanel panel, Random random)
     {
         _panel = panel;
@@ -16,39 +20,63 @@ public class NyanCat
     }
 
     public PictureBox CreateNyanCat(int x)
-    { 
+    {
         var catPBox = new PictureBox();
-        catPBox.Image = Properties.Resources.nyan_cat_left;
-        catPBox.SizeMode = PictureBoxSizeMode.AutoSize;
-        catPBox.Left =x;
-        catPBox.BackColor = Color.Transparent; 
-        catPBox.Top = _random.Next(1, 400);
-        _panel.Controls.Add(catPBox);
-
-        animateNyanCat(catPBox);
+        setSettings(catPBox, Properties.Resources.nyan_cat_right, x);
+        animateNyanCat(catPBox, Properties.Resources.nyan_cat_left, Properties.Resources.nyan_cat_right);
+        
         return catPBox;
     }
+    
 
-    private void animateNyanCat(PictureBox pictureBox)
+    private void setSettings(PictureBox catPBox, Bitmap nyanCatLR, int x)
     {
-        var timer = new Timer();
-        var direction = 1;
-        var step = 5;
-        var maxHeight = _panel.Height - pictureBox.Height;
+        catPBox.Image = nyanCatLR;
+        catPBox.Top = x * 2;
+        catPBox.SizeMode = PictureBoxSizeMode.AutoSize;
+        catPBox.Left = _random.Next(1, 400);
+        catPBox.BackColor = Color.Transparent; 
+        _panel.Controls.Add(catPBox);
+    }
+
+    private void animateNyanCat(PictureBox pictureBox, Bitmap nyanCatLeft, Bitmap nyanCatRight)
+    {
+        timer = new Timer();
         timer.Interval = 50;
-        timer.Tick += (sender, args) =>
+        timer.Tick += (sender, e) =>
         {
-            pictureBox.Left += direction * step;
-            if (pictureBox.Right >= _panel.Width || pictureBox.Left <= 0)
+            var location = pictureBox.Location;
+            if (goingRight) location.X += 1;
+            else location.X -= 1;
+            
+            if (jumpCount < 10)
             {
-                direction *= -1;
+                location.Y -= 3;
+                jumpCount++;
             }
-            pictureBox.Top += step;
-            if (pictureBox.Top >= maxHeight || pictureBox.Top <= 0)
+            else if (jumpCount < 20)
             {
-                step *= -1;
+                location.Y += 3;
+                jumpCount++;
             }
+            else  jumpCount = 0;
+
+            var form1 = new Form1();
+            if (location.X + pictureBox.Width > form1.ClientSize.Width)
+            {
+                goingRight = false;
+                location.X = form1.ClientSize.Width - pictureBox.Width;
+                //pictureBox.Image = nyanCatLeft;
+            }
+            if (location.X < 0)
+            {
+                goingRight = true;
+                location.X = 0;
+                //pictureBox.Image = nyanCatRight;
+            }
+            pictureBox.Location = location;
         };
         timer.Start();
     }
+
 }
