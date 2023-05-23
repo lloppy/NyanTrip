@@ -36,15 +36,23 @@ namespace Car_Racing_Game_MOO_ICT.Game.Controller
             Speed.trafficSpeed = endScore > 500 ? 20 : endScore > 2000 ? 25 : 16;
         }
 
-        public void GameOver(PictureBox AI1, PictureBox AI2)
-        {
-            if (sun.getSunCount() >= 401)
-            {
-                
-                gameOver();
-            }
-        }
         
+        public void GameNyanCat(PictureBox AI1, PictureBox AI2, PictureBox SUN1, PictureBox SUN2, 
+            PictureBox RoadTrack1, PictureBox RoadTrack2)
+        {
+            AI1.Visible = false;
+            AI2.Visible = false;
+            SUN1.Visible = false;
+            SUN2.Visible = false;
+            RoadTrack1.Visible = false;
+            RoadTrack2.Visible = false;
+            
+            if (sun.getSunCount() >= 501)
+            {
+                gameOver();
+            }        
+        }
+
         private void gameOver()
         {
             playSound();

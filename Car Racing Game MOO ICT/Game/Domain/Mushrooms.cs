@@ -35,7 +35,7 @@ namespace Car_Racing_Game_MOO_ICT.Game.Domain
         
         public void CreateNewMushroomPosition(PictureBox mushroom)
         {
-            mushroom.Top = -100;
+            mushroom.Top = -250;
             if ((string)mushroom.Tag == "mushroomLeft")
             {
                 mushroom.Left = _mushroomPosition.Next(5, 135);

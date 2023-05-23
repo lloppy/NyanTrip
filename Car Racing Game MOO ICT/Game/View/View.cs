@@ -31,8 +31,9 @@ namespace Car_Racing_Game_MOO_ICT.Game.View {
             
             movementUtility = new MovementUtility(speed, player, roadTrack1, roadTrack2, SUN1, SUN2, AI1, AI2);
             game = new Game.Controller.Game(gameTimer, explosion, player, award, btnStart, speed);
-        }
 
+        }
+        
         private void GameTimerEvent(object sender, EventArgs e)
         {
             score.UpdateScore();
@@ -42,7 +43,8 @@ namespace Car_Racing_Game_MOO_ICT.Game.View {
             movementUtility.MoveRoad();
             movementUtility.MoveMushroom(mushrooms);
             movementUtility.MoveSun(sun);
-            game.GameOver(AI1, AI2);
+            
+            GameOver();
             game.UpdateAward();
         }
         
@@ -50,11 +52,16 @@ namespace Car_Racing_Game_MOO_ICT.Game.View {
         {
             game.ResetGame();
             game.SetGameSettings(AI1, AI2, SUN1, SUN2, position);
-            
             gameTimer.Start();
         }
+
+        private void GameOver()
+        {
+            if (sun.getSunCount() >= 201)
+            {
+                game.GameNyanCat(AI1, AI2, SUN1, SUN2, roadTrack1, roadTrack2);
+            }
+        }
         
-        public void PauseGame() => gameTimer.Stop();
-        public void RepauseGame() => gameTimer.Start();
     }
 }

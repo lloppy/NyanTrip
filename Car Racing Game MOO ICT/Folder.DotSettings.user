@@ -8,5 +8,5 @@
 &lt;/SessionState&gt;</s:String>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=Car_0020Racing_0020Game_0020MOO_0020ICT_002FForm1/@EntryIndexedValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=Car_0020Racing_0020Game_0020MOO_0020ICT_002FGame_002FView_002FView/@EntryIndexedValue">True</s:Boolean>
-	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=Car_0020Racing_0020Game_0020MOO_0020ICT_002FProperties_002FResources/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=Car_0020Racing_0020Game_0020MOO_0020ICT_002FProperties_002FResources/@EntryIndexedValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/Initialized/@EntryValue">True</s:Boolean></wpf:ResourceDictionary>

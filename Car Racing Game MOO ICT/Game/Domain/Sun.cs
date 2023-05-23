@@ -97,7 +97,7 @@ public class Sun
 
     public void CreateNewSunPosition(PictureBox sun)
     {
-        sun.Top = -100;
+        sun.Top = -250;
         
         if ((string)sun.Tag == "sunLeft")
         {
