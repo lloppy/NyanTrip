@@ -73,7 +73,7 @@ namespace Car_Racing_Game_MOO_ICT.Game.View
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(475, 519);
             this.panel1.TabIndex = 0;
-            this.panel1.BackColor = Color.Transparent;
+            this.panel1.BackColor = Color.Green;
             // 
             // btnStart
             // 
