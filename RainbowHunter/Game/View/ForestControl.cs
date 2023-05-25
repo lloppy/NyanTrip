@@ -90,14 +90,12 @@ namespace RainbowHunter.Game.View
                 panel1.BackColor = Color.CornflowerBlue;
                 roadTrack1.Visible = false;
                 roadTrack2.Visible = false;
-                SUN1.Visible = false;
-                SUN2.Visible = false;
                 player.Visible = false;
 
                 var nyanCat = new NyanCat(panel1, new Random());
                 
                 for(var i = 0; i < 2; i ++)
-                    nyanCat.CreateNyanCat(AI1, AI2);
+                    nyanCat.CreateNyanCat(AI1, AI2, SUN1, SUN2);
             }
         }
         
