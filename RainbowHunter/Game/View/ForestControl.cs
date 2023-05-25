@@ -14,11 +14,11 @@ namespace RainbowHunter.Game.View
         private Sun sun;
         private Mushrooms mushrooms;
         private MovementUtility movementUtility;
-        private GameScenes _gameScenes;
         private Controller.Game _game;
         private NyanCat nyanCatCreator = new NyanCat();
         Random position = new Random();
         private bool flag = true;
+        private Controller.GameScenes _gameScenes;
 
         public ProgressBar progressBar;
 
@@ -39,7 +39,8 @@ namespace RainbowHunter.Game.View
                 if (e >= 1000)
                 {
                     panel1.BackColor = Color.Chocolate;
-                    _game.gameOver(); 
+                    _gameScenes.Finish();
+                    //_game.gameOver(); 
                 }
                 sunScore.Text = "Sun: " + e;
             };
@@ -123,6 +124,12 @@ namespace RainbowHunter.Game.View
                     break;
             }
             return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        public void Configure(GameScenes gameScenes)
+        {
+            _gameScenes = gameScenes;
+
         }
     }
 }

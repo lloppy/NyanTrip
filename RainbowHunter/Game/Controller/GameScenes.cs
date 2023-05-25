@@ -15,6 +15,12 @@ namespace RainbowHunter.Game.Controller
             ChangeStage(GameStage.Forest);
         }
         
+        public void Finish()
+        {
+            ChangeStage(GameStage.Finished);
+        }
+        
+        
         private void ChangeStage(GameStage stage)
         {
             this.stage = stage;

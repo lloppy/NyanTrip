@@ -11,7 +11,7 @@ namespace RainbowHunter.Game.View
         {
             InitializeComponent();
             
-            _gameScenes = new Controller.GameScenes();
+            _gameScenes = new GameScenes();
             _gameScenes.StageChanged += GameScenesOnStageChanged;
 
             ShowStartScreen();
@@ -44,7 +44,7 @@ namespace RainbowHunter.Game.View
         private void ShowGameForest()
         {
             HideScreens();
-            //forestControl.Configure(_gameScenes);
+            forestControl.Configure(_gameScenes);
             forestControl.Show();
         }
         
