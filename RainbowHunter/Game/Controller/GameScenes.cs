@@ -9,7 +9,11 @@ namespace RainbowHunter.Game.Controller
         public event Action<GameStage> StageChanged;
         public GameStage Stage => stage;
 
-
+        public void MainMenu()
+        {
+            ChangeStage(GameStage.NotStarted);
+        }
+        
         public void Start()
         {
             ChangeStage(GameStage.Forest);

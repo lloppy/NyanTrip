@@ -42,7 +42,7 @@ namespace RainbowHunter.Game.View
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(475, 519);
             this.panel.TabIndex = 0;
-            this.panel.BackColor = Color.DarkViolet;
+            this.panel.BackColor = Color.Transparent;
 
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
