@@ -16,9 +16,10 @@ namespace RainbowHunter.Game.View
         private MovementUtility movementUtility;
         private GameScenes _gameScenes;
         private Controller.Game _game;
-
+        private NyanCat nyanCatCreator = new NyanCat();
         Random position = new Random();
-        
+        private bool flag = true;
+
         public ForestControl()
         {
             InitializeComponent();
@@ -26,7 +27,8 @@ namespace RainbowHunter.Game.View
             speed = new Speed(12, 15, 12);
             score = new Score();
             sun = new Sun();
-            mushrooms = new Mushrooms(); 
+            mushrooms = new Mushrooms();
+            nyanCatCreator = new NyanCat();
             score.ScoreUpdated += (sender, e) => txtScore.Text = "Score: " + e;
             sun.SunScoreUpdated += (sender, e) => sunScore.Text = "Sun: " + e;
             
@@ -40,13 +42,16 @@ namespace RainbowHunter.Game.View
             score.UpdateScore();
             sun.UpdateSunScore();
 
-            movementUtility.MovePlayer();
-            movementUtility.MoveRoad();
-            movementUtility.MoveMushroom(mushrooms);
-            movementUtility.MoveSun(sun);
-            
-            StartNewGame();
-            _game.UpdateAward();
+            if (flag)
+            {
+                movementUtility.MoveSun(sun);
+                movementUtility.MovePlayer();
+                movementUtility.MoveRoad();
+                movementUtility.MoveMushroom(mushrooms);
+                StartNewGame();
+                _game.UpdateAward();
+            }
+           
         }
 
         private void ResetGame(object sender, EventArgs e)
@@ -60,20 +65,21 @@ namespace RainbowHunter.Game.View
         {
             if (sun.getSunCount() >= 41)
             {
-                gameTimer.Stop();
+                //gameTimer.Stop();
+                flag = false;
                 
-               
                 panel1.BackColor = Color.CornflowerBlue;
                 roadTrack1.Visible = false;
                 roadTrack2.Visible = false;
                 SUN1.Visible = false;
                 SUN2.Visible = false;
                 player.Visible = false;
-                
+
                 var nyanCat = new NyanCat(panel1, new Random());
                 
                 for(var i = 0; i < 2; i ++)
                     nyanCat.CreateNyanCat(AI1, AI2);
+                
                 
                 //this.ParentForm.Close();
 

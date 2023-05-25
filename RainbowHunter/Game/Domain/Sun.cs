@@ -34,9 +34,14 @@ public class Sun
     
     public void IncreaseSunFromMushroom()
     {
-        _sun+= 10;
+        _sun += 10;
     }
 
+    public void IncreaseSunFromCat()
+    {
+        _sun += 5;
+    }
+    
     private int CurrentSunScore
     {
         get => _sun;

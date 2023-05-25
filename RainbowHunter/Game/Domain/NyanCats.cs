@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using RainbowHunter.Game.View;
 using RainbowHunter.Properties;
 
 namespace RainbowHunter.Game.Domain;
@@ -10,12 +11,14 @@ public class NyanCat
     private readonly Panel _panel;
     private readonly Random _random;
     private bool flag = false;
+    private Sun sun = new Sun();
     public NyanCat(Panel panel, Random random)
     {
         _panel = panel;
         _random = random;
     }
 
+    public  NyanCat(){}
     public void CreateNyanCat(PictureBox AI1, PictureBox AI2)
     {
         AI1.Image = Resources.nyan_cat_right;
@@ -23,6 +26,12 @@ public class NyanCat
         AI1.Top = 60;
         AI1.Left = 60;
 
+        AI1.Click += (sender, args) =>
+        {
+            _panel.BackColor = Color.Chartreuse;
+            sun.IncreaseSunFromCat();
+        };
+        AI2.Click += (sender, args) => sun.IncreaseSunFromCat();
         
         AI2.Top = 260;
         AI2.Left = 260;
@@ -37,7 +46,7 @@ public class NyanCat
         var direction = 1;
         var step = 5;
         var maxHeight = _panel.Height - pictureBox.Height;
-        timer.Interval = 30;
+        timer.Interval = 50;
         timer.Tick += (sender, args) =>
         {
             pictureBox.Left += direction * step;
@@ -68,7 +77,7 @@ public class NyanCat
         var direction = 1;
         var step = 5;
         var maxHeight = _panel.Height - pictureBox.Height;
-        timer.Interval = 30;
+        timer.Interval = 50;
         timer.Tick += (sender, args) =>
         {
             pictureBox.Left += direction * step;
