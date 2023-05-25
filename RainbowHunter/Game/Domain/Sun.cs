@@ -8,6 +8,7 @@ public class Sun
     private static int _sun;
     public event EventHandler<int> SunScoreUpdated;
     private readonly Random _sunPosition = new Random();
+    public ProgressBar ProgressBar = new ProgressBar();
     private PictureBox SunPictureBox { get; }
 
     public Sun()
@@ -51,6 +52,7 @@ public class Sun
     public void UpdateSunScore()
     {
         SunScoreUpdated?.Invoke(null, CurrentSunScore);
+        ProgressBar.Value = _sun;
     }
     
     private void SetPosition()

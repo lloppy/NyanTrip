@@ -62,6 +62,8 @@ namespace RainbowHunter.Game.Controller
         public void MoveMushroom(Mushrooms mushroom)
         {
            mushroom.MoveTraffic(AI1, AI2, speed);
+           var progressBar = new ProgressBar();
+           
            if (player.Bounds.IntersectsWith(AI1.Bounds))
            {
                sun.IncreaseSunFromMushroom();
@@ -82,7 +84,7 @@ namespace RainbowHunter.Game.Controller
         
         public void MoveSun(Sun sun) {  
             sun.MoveSun(sun1, sun2, speed);
-
+            
             if (player.Bounds.IntersectsWith(sun1.Bounds))
             {
                 sun.IncreaseSun();

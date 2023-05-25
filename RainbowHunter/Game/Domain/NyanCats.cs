@@ -25,10 +25,13 @@ public class NyanCat
         AI2.Image = Resources.nyan_cat_right;
         AI1.Top = 60;
         AI1.Left = 60;
-
+        
+        var progressBar = new ProgressBar();
+        
         AI1.Click += (sender, args) =>
         {
             _panel.BackColor = Color.Chartreuse;
+          
             sun.IncreaseSunFromCat();
         };
         AI2.Click += (sender, args) => sun.IncreaseSunFromCat();

@@ -20,6 +20,8 @@ namespace RainbowHunter.Game.View
         Random position = new Random();
         private bool flag = true;
 
+        public ProgressBar progressBar;
+
         public ForestControl()
         {
             InitializeComponent();
@@ -29,6 +31,8 @@ namespace RainbowHunter.Game.View
             sun = new Sun();
             mushrooms = new Mushrooms();
             nyanCatCreator = new NyanCat();
+
+            setProgressBar();
             score.ScoreUpdated += (sender, e) => txtScore.Text = "Score: " + e;
             sun.SunScoreUpdated += (sender, e) => sunScore.Text = "Sun: " + e;
             
@@ -36,7 +40,24 @@ namespace RainbowHunter.Game.View
             _game = new Controller.Game(gameTimer, player, speed);
         }
 
-        
+        private void setProgressBar()
+        {
+            sun.ProgressBar.Maximum = 1000;
+            sun.ProgressBar.Width = 475;
+            sun.ProgressBar.Height = 60;
+            sun.ProgressBar.Location = new Point(12, 600);
+            this.Controls.Add(sun.ProgressBar);
+
+            if (sun.ProgressBar.Value >= 20) {
+                panel1.BackColor = Color.Red; 
+            }
+            if (sun.ProgressBar.Value == 100) {
+                // игра закончена
+            }
+            
+        }
+
+
         private void GameTimerEvent(object sender, EventArgs e)
         {
             score.UpdateScore();
