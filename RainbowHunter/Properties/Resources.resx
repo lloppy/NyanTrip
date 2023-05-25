@@ -173,6 +173,9 @@
   <data name="nyan_cat_right" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\nyan_cat_right.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ForestControl_StartNewGame_" xml:space="preserve">
+    <value>Нажимайте на Нян кэтов, чтобы получить очки 
 
-
+Collect mushrooms in the _game and survive as long as you can</value>
+  </data>
 </root>

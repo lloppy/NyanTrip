@@ -80,6 +80,17 @@ namespace RainbowHunter.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Нажимайте на Нян кэтов, чтобы получить очки 
+        ///
+        ///Collect mushrooms in the _game and survive as long as you can.
+        /// </summary>
+        internal static string ForestControl_StartNewGame_ {
+            get {
+                return ResourceManager.GetString("ForestControl_StartNewGame_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap gold {

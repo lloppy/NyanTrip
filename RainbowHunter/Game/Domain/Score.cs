@@ -5,14 +5,11 @@ namespace RainbowHunter.Game.Domain;
 public class Score
 {
     private static int _score;
-    public bool stop = false;
-
     public event EventHandler<int> ScoreUpdated;
 
-    public Score()
-    {
-        _score = 0;
-    }
+    public Score() => _score = 0;
+    
+    public void ResetScore() => _score = 0;
 
     public int CurrentScore
     {
@@ -22,20 +19,7 @@ public class Score
     
     public void UpdateScore()
     {
-        if (!stop)
-        {
-            _score++;
-            ScoreUpdated?.Invoke(null, CurrentScore);
-        }
-    }
-
-    public void PauseScore()
-    {
-        stop = true;
-    }
-    
-    public void ResetScore()
-    {
-        _score = 0;
+        _score++;
+        ScoreUpdated?.Invoke(null, CurrentScore);
     }
 }

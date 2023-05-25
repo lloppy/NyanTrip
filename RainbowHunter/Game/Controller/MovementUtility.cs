@@ -59,6 +59,7 @@ namespace RainbowHunter.Game.Controller
                 roadTrack1.Top = -size;
             }
         }
+        
         public void MoveMushroom(Mushrooms mushroom)
         {
            mushroom.MoveTraffic(AI1, AI2, speed);
@@ -75,11 +76,6 @@ namespace RainbowHunter.Game.Controller
                sun.IncreaseSunFromMushroom();
                mushroom.CreateNewMushroomPosition(AI2);
            }
-        }
-
-        public void MoveCats(NyanCat cat)
-        {
-            //cat.CreateNyanCat(AI1, AI2);
         }
         
         public void MoveSun(Sun sun) {  

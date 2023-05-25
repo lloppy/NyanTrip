@@ -23,7 +23,7 @@ public class NyanCat
     public void CreateNyanCat(PictureBox AI1, PictureBox AI2)
     {
         var counter = 0;
-        var backColors = new List<Color>{Color.Yellow, Color.DarkOrange, Color.Crimson, Color.Transparent};
+        var backColors = new List<Color>{Color.LightSkyBlue, Color.ForestGreen, Color.Gold, Color.Goldenrod, Color.DarkOrange, Color.Coral,  Color.Crimson, Color.Transparent};
         AI1.Image = Resources.nyan_cat_right;
         AI2.Image = Resources.nyan_cat_right;
         AI1.Top = 60;

@@ -11,42 +11,24 @@ public class Sun
     public ProgressBar ProgressBar = new ProgressBar();
     private PictureBox SunPictureBox { get; }
 
-    public Sun()
-    {
-        _sun = 0;
-    }
-    
-    public Sun(PictureBox sun)
+    public Sun() => _sun = 0;
+
+    private Sun(PictureBox sun)
     {
         SunPictureBox = sun;
         SetPicture();
         SetPosition();
     }
-
-    public void SetValue(int sunValue)
-    {
-        _sun = sunValue;
-    }
     
-    public int getSunCount()
-    {
-        return _sun ;
-    }
-
-    public void IncreaseSun()
-    {
-        _sun++;
-    }
+    public void ResetSunScore() => _sun = 0;
     
-    public void IncreaseSunFromMushroom()
-    {
-        _sun += 10;
-    }
+    public int GetSunCount() => _sun;
 
-    public void IncreaseSunFromCat()
-    {
-        _sun += 100;
-    }
+    public void IncreaseSun() => _sun++;
+    
+    public void IncreaseSunFromMushroom() => _sun += 5;
+    
+    public void IncreaseSunFromCat() => _sun += 50;
     
     private int CurrentSunScore
     {
@@ -64,7 +46,6 @@ public class Sun
     {
         SunScoreUpdated?.Invoke(null, CurrentSunScore + startValue);
         ProgressBar.Value = _sun + startValue;
-        
     }
     
     private void SetPosition()
@@ -81,11 +62,6 @@ public class Sun
         }
     }
     
-    public void ResetSunScore()
-    {
-        _sun = 0;
-    }
-
     private void SetPicture()
     {
         SunPictureBox.Image = Properties.Resources.sun;
@@ -99,14 +75,8 @@ public class Sun
         SUN1.Top += speed.trafficSpeed;
         SUN2.Top += speed.trafficSpeed;
         
-        if (SUN1.Top > 530)
-        {
-            ChangeAISuns(SUN1);
-        }
-        if (SUN2.Top > 530)
-        {
-            ChangeAISuns(SUN2);
-        }
+        if (SUN1.Top > 530) ChangeAISuns(SUN1);
+        if (SUN2.Top > 530) ChangeAISuns(SUN2);
     }
 
     private void ChangeAISuns(PictureBox tempSun)

@@ -43,7 +43,8 @@ namespace RainbowHunter.Game.Domain
             else if ((string)mushroom.Tag == "mushroomRight")
             {
                 mushroom.Left = _mushroomPosition.Next(230, 360);
-            }        }
+            }        
+        }
         
         private void SetPicture()
         {
@@ -67,14 +68,9 @@ namespace RainbowHunter.Game.Domain
         {
             AI1.Top += speed.trafficSpeed;
             AI2.Top += speed.trafficSpeed;
-            if (AI1.Top > 530)
-            {
-               ChangeAIMushrooms(AI1);
-            }
-            if (AI2.Top > 530)
-            {
-               ChangeAIMushrooms(AI2);
-            }
+            
+            if (AI1.Top > 530) ChangeAIMushrooms(AI1);
+            if (AI2.Top > 530) ChangeAIMushrooms(AI2);
         }
         
         private void ChangeAIMushrooms(PictureBox tempMushroom)

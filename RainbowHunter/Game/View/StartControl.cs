@@ -18,7 +18,6 @@ namespace RainbowHunter.Game.View
                 return;
 
             _gameScenes = gameScenes;
-
             startButton.Click += StartButton_Click;
         }
 

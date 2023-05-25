@@ -1,22 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Windows.Forms;
-using RainbowHunter.Game.Domain;
+﻿using RainbowHunter.Game.Domain;
 using RainbowHunter.Game.View;
 using RainbowHunter.Properties;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace RainbowHunter.Game.Controller
 {
     public class Game
     {
         private GameStage stage = GameStage.NotStarted;
-        private PictureBox Player { get; }
-        private Timer GameTimer { get; }
-        private Score score = new Score(); 
-        private Sun sun = new Sun(); 
-        private Speed Speed { get; } = new Speed(12, 15, 12);
-        public event Action<GameStage> StageChanged;
+        public PictureBox Player { get; set; }
+        public Timer GameTimer { get; set; }
+        private Score score = new Score();
+        private Sun sun = new Sun();
+        public Speed Speed { get; } = new Speed(12, 15, 12);
 
         public Game(Timer gameTimer, PictureBox player, Speed speed)
         {
@@ -24,8 +22,6 @@ namespace RainbowHunter.Game.Controller
             Player = player;
             Speed = speed;
         }
-        
-        public Game(){}
 
         public void UpdateAward()
         {
@@ -34,43 +30,26 @@ namespace RainbowHunter.Game.Controller
             Speed.trafficSpeed = endScore > 200 ? 20 : endScore > 900 ? 25 : 16;
         }
         
-        private void ChangeStage(GameStage stage)
-        {
-            this.stage = stage;
-            StageChanged?.Invoke(stage);
-        }
-        
-       public void gameOver()
-        {
-            ChangeStage(GameStage.Finished);
-        }
-
         public void ResetGame()
         {
-            score.ResetScore(); 
+            score.ResetScore();
             sun.ResetSunScore();
         }
-
-        private void playSound()
-        {
-            System.Media.SoundPlayer playCrash = new System.Media.SoundPlayer(Properties.Resources.hit);
-            playCrash.Play();
-        }
-
-        public void SetGameSettings(PictureBox AI1, PictureBox AI2, PictureBox SUN1, PictureBox SUN2, Random position)
+        
+        public void SetGameSettings(PictureBox ai1, PictureBox ai2, PictureBox sun1, PictureBox sun2, Random position)
         {
             Speed.roadSpeed = 13;
             Speed.trafficSpeed = 16;
 
-            AI1.Top = position.Next(200, 500) * -1;
-            AI1.Left = position.Next(5, 200);
-            AI2.Top = position.Next(200, 500) * -1;
-            AI2.Left = position.Next(245, 422);
+            ai1.Top = position.Next(200, 500) * -1;
+            ai1.Left = position.Next(5, 200);
+            ai2.Top = position.Next(200, 500) * -1;
+            ai2.Left = position.Next(245, 422);
 
-            SUN1.Top = position.Next(200, 500) * -1;
-            SUN1.Left = position.Next(5, 200);
-            SUN2.Top = position.Next(200, 500) * -1;
-            SUN2.Left = position.Next(245, 422);
+            sun1.Top = position.Next(200, 500) * -1;
+            sun1.Left = position.Next(5, 200);
+            sun2.Top = position.Next(200, 500) * -1;
+            sun2.Left = position.Next(245, 422);
         }
     }
 }

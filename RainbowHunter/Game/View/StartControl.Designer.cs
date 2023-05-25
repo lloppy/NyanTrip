@@ -64,7 +64,7 @@ namespace RainbowHunter.Game.View
             this.pictureBox.Image = global::RainbowHunter.Properties.Resources.nyan_cat_right;
             this.pictureBox.Location = new System.Drawing.Point(203, 103);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(394, 394);
+            this.pictureBox.Size = new System.Drawing.Size(344, 344);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;

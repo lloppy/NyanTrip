@@ -26,5 +26,4 @@ public class Speed
         this.trafficSpeed = lastSpeed.trafficSpeed;
         this.playerSpeed = lastSpeed.playerSpeed;
     }
-    
 }

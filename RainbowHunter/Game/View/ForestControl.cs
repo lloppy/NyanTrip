@@ -16,9 +16,9 @@ namespace RainbowHunter.Game.View
         private MovementUtility movementUtility;
         private Controller.Game _game;
         private NyanCat nyanCatCreator = new NyanCat();
-        Random position = new Random();
         private bool flag = true;
-        private Controller.GameScenes _gameScenes;
+        private GameScenes _gameScenes;
+        Random position = new Random();
 
         public ProgressBar progressBar;
 
@@ -34,11 +34,8 @@ namespace RainbowHunter.Game.View
 
             setProgressBar();
             score.ScoreUpdated += (sender, e) => txtScore.Text = "Score: " + e;
-            sun.SunScoreUpdated += (sender, e) =>
-            {
-                sunScore.Text = "Sun: " + e;
-            };
-            
+            sun.SunScoreUpdated += (sender, e) => sunScore.Text = "Sun: " + e;
+
             movementUtility = new MovementUtility(speed, player, roadTrack1, roadTrack2, SUN1, SUN2, AI1, AI2);
             _game = new Controller.Game(gameTimer, player, speed);
         }
@@ -65,13 +62,10 @@ namespace RainbowHunter.Game.View
                 StartNewGame();
                 _game.UpdateAward();
                 sun.UpdateSunScore();
-
             }
-            else
-            {
-                sun.UpdateSunScore(200);
-            }
-            if (sun.getSunCount() >= 800)
+            else sun.UpdateSunScore(200);
+            
+            if (sun.GetSunCount() >= 800)
             {
                 gameTimer.Stop();
                 _gameScenes.Finish();
@@ -87,13 +81,11 @@ namespace RainbowHunter.Game.View
         
         private void StartNewGame()
         {
-            if (sun.getSunCount() >= 201)
+            if (sun.GetSunCount() >= 201)
             {
-                //gameTimer.Stop();
                 flag = false;
 
-                label2.Text = "Нажимайте на Нян кэтов, чтобы получить очки \r\n\r\nCollect mushrooms in the _game an" +
-                "d survive as long as you can";
+                label2.Text = Resources.ForestControl_StartNewGame_;
                 
                 panel1.BackColor = Color.CornflowerBlue;
                 roadTrack1.Visible = false;
@@ -106,8 +98,6 @@ namespace RainbowHunter.Game.View
                 
                 for(var i = 0; i < 2; i ++)
                     nyanCat.CreateNyanCat(AI1, AI2);
-                
-                //_gameScenes.StartNyanGame();
             }
         }
         

@@ -7,19 +7,16 @@ namespace RainbowHunter.Game.View
 {
     public partial class FinishedControl : UserControl
     {
-        private Controller.GameScenes _gameScenes;
+        private GameScenes _gameScenes;
 
         public FinishedControl()
         {
             InitializeComponent();
         }
 
-      
         public void Configure(GameScenes gameScenes)
         {
             _gameScenes = gameScenes;
-            
-            //panel.BackColor = Color.Black;
             Controls.Add(panel);
 
             var label = new Label();
@@ -43,6 +40,16 @@ namespace RainbowHunter.Game.View
             button.Left = (panel.Width - button.Width) / 2;
             button.Click += OnOpenOtherControlButtonClick;
             panel.Controls.Add(button);
+
+            var cat = new PictureBox();
+            cat.Location = new Point(203, 103);
+            cat.Size = new Size(300, 300);
+            cat.Top = label.Bottom;
+            cat.SizeMode = PictureBoxSizeMode.Zoom;
+            cat.Left = (panel.Width - cat.Width) / 2 + 20;
+            cat.Image = Properties.Resources.nyan_cat_right;
+            panel.Controls.Add(cat);
+
         }
         
         private void OnOpenOtherControlButtonClick(object sender, EventArgs e)
