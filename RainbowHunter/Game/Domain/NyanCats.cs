@@ -3,64 +3,93 @@ using System.Drawing;
 using System.Windows.Forms;
 using RainbowHunter.Properties;
 
-namespace RainbowHunter.Game.Domain
+namespace RainbowHunter.Game.Domain;
+
+public class NyanCat
 {
-    public class NyanCat
+    private readonly Panel _panel;
+    private readonly Random _random;
+    private bool flag = false;
+    public NyanCat(Panel panel, Random random)
     {
-        private readonly Panel _panel;
-        private readonly Random _random;
-        private bool goingRight = true;
-        private int jumpCount = 0;
+        _panel = panel;
+        _random = random;
+    }
 
-        public NyanCat(Panel panel, Random random)
-        {
-            _panel = panel;
-            _random = random;
-        }
+    public void CreateNyanCat(PictureBox AI1, PictureBox AI2)
+    {
+        AI1.Image = Resources.nyan_cat_right;
+        AI2.Image = Resources.nyan_cat_right;
+        AI1.Top = 60;
+        AI1.Left = 60;
 
-        public NyanCat()
-        {
-            
-        }
         
-        public void CreateNyanCat(PictureBox ai1, PictureBox ai2)
-        {
-            ai1.Image = Resources.nyan_cat_right;
-            ai2.Image = Resources.nyan_cat_left;
-        }
+        AI2.Top = 260;
+        AI2.Left = 260;
         
-        public PictureBox CreateNyanCat(int x)
-        {
-            var catPBox = new PictureBox();
-            setSettings(catPBox, Properties.Resources.nyan_cat_right, x);
-            animateNyanCat(catPBox, Properties.Resources.nyan_cat_left, Properties.Resources.nyan_cat_right);
-            return catPBox;
-        }
+        animateNyanCat(AI1);
+        animateNyanCat2(AI2);
+    }
 
-        private void setSettings(PictureBox catPBox, Bitmap nyanCatLR, int x)
+    private void animateNyanCat(PictureBox pictureBox)
+    {
+        var timer = new Timer();
+        var direction = 1;
+        var step = 5;
+        var maxHeight = _panel.Height - pictureBox.Height;
+        timer.Interval = 30;
+        timer.Tick += (sender, args) =>
         {
-            catPBox.Image = nyanCatLR;
-            catPBox.Top = x * 2;
-            catPBox.SizeMode = PictureBoxSizeMode.AutoSize;
-            catPBox.Left = _random.Next(x, x + 80);
-            catPBox.BackColor = Color.Transparent;
-            _panel.Controls.Add(catPBox);
-        }
+            pictureBox.Left += direction * step;
 
-        private void animateNyanCat(PictureBox pictureBox, Bitmap nyanCatLeft, Bitmap nyanCatRight)
-        {
-            var timer = new Timer();
-            timer.Interval = 20;
-            timer.Tick += (sender, e) =>
+            if (pictureBox.Right >= _panel.Width)
             {
-                var location = pictureBox.Location;
-                if (goingRight) location.X += 1;
-                else location.X -= 1;
+                pictureBox.Image = Resources.nyan_cat_left ;
+                direction *= -1;
+            }
+            else if (pictureBox.Left <= 0)
+            {
+                pictureBox.Image = Resources.nyan_cat_right;
+                direction *= -1;
+            }
 
-                //var form1 = new Form1();
-                
-            };
-            timer.Start();
-        }
+            pictureBox.Top += step;
+            if (pictureBox.Top >= maxHeight || pictureBox.Top <= 0)
+            {
+                step *= -1;
+            }
+        };
+        timer.Start();
+    }
+    
+    private void animateNyanCat2(PictureBox pictureBox)
+    {
+        var timer = new Timer();
+        var direction = 1;
+        var step = 5;
+        var maxHeight = _panel.Height - pictureBox.Height;
+        timer.Interval = 30;
+        timer.Tick += (sender, args) =>
+        {
+            pictureBox.Left += direction * step;
+
+            if (pictureBox.Right >= _panel.Width)
+            {
+                pictureBox.Image = Resources.nyan_cat_left ;
+                direction *= -1;
+            }
+            else if (pictureBox.Left <= 0)
+            {
+                pictureBox.Image = Resources.nyan_cat_right;
+                direction *= -1;
+            }
+
+            pictureBox.Top += step;
+            if (pictureBox.Top >= maxHeight || pictureBox.Top <= 0)
+            {
+                step *= -1;
+            }
+        };
+        timer.Start();
     }
 }

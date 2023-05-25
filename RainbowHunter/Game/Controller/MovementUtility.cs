@@ -77,7 +77,7 @@ namespace RainbowHunter.Game.Controller
 
         public void MoveCats(NyanCat cat)
         {
-            cat.CreateNyanCat(AI1, AI2);
+            //cat.CreateNyanCat(AI1, AI2);
         }
         
         public void MoveSun(Sun sun) {  

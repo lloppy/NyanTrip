@@ -8,3 +8,13 @@ C:\Users\Полина\RiderProjects\RainbowHunter\RainbowHunter\obj\Debug\Rainbo
 C:\Users\Полина\RiderProjects\RainbowHunter\RainbowHunter\obj\Debug\RainbowHunter.csproj.CoreCompileInputs.cache
 C:\Users\Полина\RiderProjects\RainbowHunter\RainbowHunter\obj\Debug\RainbowHunter.exe
 C:\Users\Полина\RiderProjects\RainbowHunter\RainbowHunter\obj\Debug\RainbowHunter.pdb
+C:\Users\Полина\Downloads\RainbowHunter\RainbowHunter\RainbowHunter\bin\Debug\RainbowHunter.exe.config
+C:\Users\Полина\Downloads\RainbowHunter\RainbowHunter\RainbowHunter\bin\Debug\RainbowHunter.exe
+C:\Users\Полина\Downloads\RainbowHunter\RainbowHunter\RainbowHunter\bin\Debug\RainbowHunter.pdb
+C:\Users\Полина\Downloads\RainbowHunter\RainbowHunter\RainbowHunter\obj\Debug\RainbowHunter.csproj.AssemblyReference.cache
+C:\Users\Полина\Downloads\RainbowHunter\RainbowHunter\RainbowHunter\obj\Debug\RainbowHunter.csproj.SuggestedBindingRedirects.cache
+C:\Users\Полина\Downloads\RainbowHunter\RainbowHunter\RainbowHunter\obj\Debug\RainbowHunter.Properties.Resources.resources
+C:\Users\Полина\Downloads\RainbowHunter\RainbowHunter\RainbowHunter\obj\Debug\RainbowHunter.csproj.GenerateResource.cache
+C:\Users\Полина\Downloads\RainbowHunter\RainbowHunter\RainbowHunter\obj\Debug\RainbowHunter.csproj.CoreCompileInputs.cache
+C:\Users\Полина\Downloads\RainbowHunter\RainbowHunter\RainbowHunter\obj\Debug\RainbowHunter.exe
+C:\Users\Полина\Downloads\RainbowHunter\RainbowHunter\RainbowHunter\obj\Debug\RainbowHunter.pdb

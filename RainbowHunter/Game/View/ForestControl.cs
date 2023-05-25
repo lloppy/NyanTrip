@@ -62,19 +62,18 @@ namespace RainbowHunter.Game.View
             {
                 gameTimer.Stop();
                 
-                AI1.Image = Resources.nyan_cat_right;
-                AI2.Image = Resources.nyan_cat_left;
-                AI1.Top = 60;
-                AI1.Left = 60;
-                
-                AI2.Top = 260;
-                AI2.Left = 300;
-                
+               
                 panel1.BackColor = Color.CornflowerBlue;
                 roadTrack1.Visible = false;
                 roadTrack2.Visible = false;
                 SUN1.Visible = false;
                 SUN2.Visible = false;
+                player.Visible = false;
+                
+                var nyanCat = new NyanCat(panel1, new Random());
+                
+                for(var i = 0; i < 2; i ++)
+                    nyanCat.CreateNyanCat(AI1, AI2);
                 
                 //this.ParentForm.Close();
 
