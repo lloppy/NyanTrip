@@ -30,8 +30,8 @@ namespace RainbowHunter.Game.Controller
         public void UpdateAward()
         {
             var endScore = score.CurrentScore;
-            Speed.roadSpeed = endScore > 500 ? 18 : endScore > 2000 ? 23 : 13;
-            Speed.trafficSpeed = endScore > 500 ? 20 : endScore > 2000 ? 25 : 16;
+            Speed.roadSpeed = endScore > 200 ? 18 : endScore > 900 ? 23 : 13;
+            Speed.trafficSpeed = endScore > 200 ? 20 : endScore > 900 ? 25 : 16;
         }
         
         private void ChangeStage(GameStage stage)

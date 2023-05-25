@@ -36,15 +36,8 @@ namespace RainbowHunter.Game.View
             score.ScoreUpdated += (sender, e) => txtScore.Text = "Score: " + e;
             sun.SunScoreUpdated += (sender, e) =>
             {
-                if (e >= 1000)
-                {
-                    panel1.BackColor = Color.Chocolate;
-                    _gameScenes.Finish();
-                    //_game.gameOver(); 
-                }
                 sunScore.Text = "Sun: " + e;
             };
-            
             
             movementUtility = new MovementUtility(speed, player, roadTrack1, roadTrack2, SUN1, SUN2, AI1, AI2);
             _game = new Controller.Game(gameTimer, player, speed);
@@ -57,13 +50,11 @@ namespace RainbowHunter.Game.View
             sun.ProgressBar.Height = 60;
             sun.ProgressBar.Location = new Point(12, 600);
             Controls.Add(sun.ProgressBar);
-            
         }
 
         private void GameTimerEvent(object sender, EventArgs e)
         {
             score.UpdateScore();
-            sun.UpdateSunScore(200);
             
             if (flag)
             {
@@ -76,9 +67,18 @@ namespace RainbowHunter.Game.View
                 sun.UpdateSunScore();
 
             }
+            else
+            {
+                sun.UpdateSunScore(200);
+            }
+            if (sun.getSunCount() >= 800)
+            {
+                gameTimer.Stop();
+                _gameScenes.Finish();
+            }
         }
 
-        private void ResetGame(object sender, EventArgs e)
+        private void ResetGame()
         {
             _game.ResetGame();
             _game.SetGameSettings(AI1, AI2, SUN1, SUN2, position);
@@ -91,6 +91,9 @@ namespace RainbowHunter.Game.View
             {
                 //gameTimer.Stop();
                 flag = false;
+
+                label2.Text = "Нажимайте на Нян кэтов, чтобы получить очки \r\n\r\nCollect mushrooms in the _game an" +
+                "d survive as long as you can";
                 
                 panel1.BackColor = Color.CornflowerBlue;
                 roadTrack1.Visible = false;
@@ -129,7 +132,7 @@ namespace RainbowHunter.Game.View
         public void Configure(GameScenes gameScenes)
         {
             _gameScenes = gameScenes;
-
+            ResetGame();
         }
     }
 }

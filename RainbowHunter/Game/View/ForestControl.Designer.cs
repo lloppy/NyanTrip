@@ -99,7 +99,7 @@ namespace RainbowHunter.Game.View
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(475, 138);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Press Left and Right to move. \r\n\r\nCollect mushrooms in the _game an" +
+            this.label2.Text = "Нажмите \"Влево\" и \"Вправо\" для перемещения \r\n\r\nCollect mushrooms in the _game an" +
     "d survive as long as you can";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -131,7 +131,6 @@ namespace RainbowHunter.Game.View
             this.player.Size = new System.Drawing.Size(50, 99);
             this.player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.player.TabIndex = 5;
-            this.player.Click += new System.EventHandler(this.ResetGame);
             this.player.TabStop = false;
             // 
             // AI1

@@ -23,7 +23,7 @@ namespace RainbowHunter.Game.View
             Controls.Add(panel);
 
             var label = new Label();
-            label.Text = "Уровень пройден!";
+            label.Text = "Вы выиграли!";
             label.Top = 60;
             label.Font = new Font("Arial", 40, FontStyle.Bold);
             label.Width = panel.Width;
@@ -35,7 +35,7 @@ namespace RainbowHunter.Game.View
             var button = new Button();
             button.Location = new Point(300, 538);
             button.Size = new Size(400, 47);
-            button.Text = "Выйти в главное меню";
+            button.Text = "Выход";
             button.Font = new Font("Arial", 16);
             button.ForeColor = Color.White;
             button.BackColor = Color.Indigo;
@@ -47,7 +47,8 @@ namespace RainbowHunter.Game.View
         
         private void OnOpenOtherControlButtonClick(object sender, EventArgs e)
         {
-            _gameScenes.MainMenu();
+            var main = (MainForm)FindForm();
+            main.Close();
         }
     }
 }

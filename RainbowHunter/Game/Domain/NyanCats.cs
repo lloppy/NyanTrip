@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using RainbowHunter.Game.View;
@@ -21,6 +22,8 @@ public class NyanCat
     public  NyanCat(){}
     public void CreateNyanCat(PictureBox AI1, PictureBox AI2)
     {
+        var counter = 0;
+        var backColors = new List<Color>{Color.Yellow, Color.DarkOrange, Color.Crimson, Color.Transparent};
         AI1.Image = Resources.nyan_cat_right;
         AI2.Image = Resources.nyan_cat_right;
         AI1.Top = 60;
@@ -30,11 +33,16 @@ public class NyanCat
         
         AI1.Click += (sender, args) =>
         {
-            _panel.BackColor = Color.Chartreuse;
-          
+            _panel.BackColor = backColors[counter];
+            counter++;
             sun.IncreaseSunFromCat();
         };
-        AI2.Click += (sender, args) => sun.IncreaseSunFromCat();
+        AI2.Click += (sender, args) =>
+        {
+            _panel.BackColor = backColors[counter];
+            counter++;
+            sun.IncreaseSunFromCat();
+        };
         
         AI2.Top = 260;
         AI2.Left = 260;
