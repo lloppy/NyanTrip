@@ -31,17 +31,8 @@
         {
             this.startControl = new RainbowHunter.Game.View.StartControl();
             this.forestControl = new RainbowHunter.Game.View.ForestControl();
-            this.catsControl = new RainbowHunter.Game.View.CatsControl();
             this.finishedControl = new RainbowHunter.Game.View.FinishedControl();
             this.SuspendLayout();
-            // 
-            // catsControl
-            // 
-            this.catsControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.catsControl.Location = new System.Drawing.Point(0, 0);
-            this.catsControl.Name = "catsControl";
-            this.catsControl.Size = new System.Drawing.Size(475, 519);
-            this.catsControl.TabIndex = 1;
             // 
             // forestControl
             // 
@@ -75,7 +66,6 @@
             this.Controls.Add(this.finishedControl);
             this.Controls.Add(this.startControl);
             this.Controls.Add(this.forestControl);
-            this.Controls.Add(this.catsControl);
             this.Name = "MainForm";
             this.Text = "Rainbow Hunter";
             this.ResumeLayout(false);
@@ -83,7 +73,6 @@
 
         #endregion
 
-        private CatsControl catsControl;
         private ForestControl forestControl;
         private StartControl startControl;
         private FinishedControl finishedControl;

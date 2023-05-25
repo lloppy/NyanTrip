@@ -24,6 +24,8 @@ namespace RainbowHunter.Game.Controller
             Player = player;
             Speed = speed;
         }
+        
+        public Game(){}
 
         public void UpdateAward()
         {
@@ -32,33 +34,15 @@ namespace RainbowHunter.Game.Controller
             Speed.trafficSpeed = endScore > 500 ? 20 : endScore > 2000 ? 25 : 16;
         }
         
-        private void GameNyanCat()
-        {
-            GameTimer.Stop();
-            /* CatsControl newControl = new CatsControl();
-            ForestControl forestControl = new ForestControl();
-            forestControl.Controls.Clear();
-             
-            AI1.Image = Resources.nyan_cat_right;
-            AI2.Image = Resources.nyan_cat_left;
-            panel.BackColor = Color.CornflowerBlue;
-            roadTrack1.Visible = false;
-            roadTrack2.Visible = false;
-            //this.ParentForm.Close();*/
-            
-            ChangeStage(GameStage.Cats);
-        }
-
         private void ChangeStage(GameStage stage)
         {
             this.stage = stage;
             StageChanged?.Invoke(stage);
         }
         
-       private void gameOver()
+       public void gameOver()
         {
-            playSound();
-            GameTimer.Stop();
+            ChangeStage(GameStage.Finished);
         }
 
         public void ResetGame()

@@ -22,10 +22,7 @@ namespace RainbowHunter.Game.View
             switch (stage)
             {
                 case GameStage.Forest:
-                    ShowArrangingShipsScreen();
-                    break;
-                case GameStage.Cats:
-                    ShowBattleScreen();
+                    ShowGameForest();
                     break;
                 case GameStage.Finished:
                     ShowFinishedScreen();
@@ -44,24 +41,17 @@ namespace RainbowHunter.Game.View
             startControl.Show();
         }
 
-        private void ShowArrangingShipsScreen()
+        private void ShowGameForest()
         {
             HideScreens();
             //forestControl.Configure(_gameScenes);
             forestControl.Show();
         }
-
-        private void ShowBattleScreen()
-        {
-            HideScreens();
-            //catsControl.Configure(_gameScenes);
-            catsControl.Show();
-        }
-
+        
         private void ShowFinishedScreen()
         {
             HideScreens();
-            //finishedControl.Configure(_gameScenes);
+            finishedControl.Configure(_gameScenes);
             finishedControl.Show();
         }
 
@@ -69,7 +59,6 @@ namespace RainbowHunter.Game.View
         {
             startControl.Hide();
             forestControl.Hide();
-            catsControl.Hide();
             finishedControl.Hide();
         }
     }

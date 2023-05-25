@@ -14,11 +14,6 @@ namespace RainbowHunter.Game.Controller
         {
             ChangeStage(GameStage.Forest);
         }
-
-        public void StartNyanGame()
-        {
-            ChangeStage(GameStage.Cats);
-        }
         
         private void ChangeStage(GameStage stage)
         {

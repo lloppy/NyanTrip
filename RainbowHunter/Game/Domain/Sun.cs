@@ -22,6 +22,11 @@ public class Sun
         SetPicture();
         SetPosition();
     }
+
+    public void SetValue(int sunValue)
+    {
+        _sun = sunValue;
+    }
     
     public int getSunCount()
     {
@@ -40,7 +45,7 @@ public class Sun
 
     public void IncreaseSunFromCat()
     {
-        _sun += 5;
+        _sun += 100;
     }
     
     private int CurrentSunScore
@@ -53,6 +58,13 @@ public class Sun
     {
         SunScoreUpdated?.Invoke(null, CurrentSunScore);
         ProgressBar.Value = _sun;
+    }
+    
+    public void UpdateSunScore(int startValue)
+    {
+        SunScoreUpdated?.Invoke(null, CurrentSunScore + startValue);
+        ProgressBar.Value = _sun + startValue;
+        
     }
     
     private void SetPosition()

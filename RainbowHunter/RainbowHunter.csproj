@@ -56,12 +56,6 @@
         <Compile Include="Game\Domain\Score.cs" />
         <Compile Include="Game\Domain\Speed.cs" />
         <Compile Include="Game\Domain\Sun.cs" />
-        <Compile Include="Game\View\CatsControl.cs">
-          <SubType>UserControl</SubType>
-        </Compile>
-        <Compile Include="Game\View\CatsControl.Designer.cs">
-          <DependentUpon>CatsControl.cs</DependentUpon>
-        </Compile>
         <Compile Include="Game\View\FinishedControl.cs">
           <SubType>UserControl</SubType>
         </Compile>

@@ -34,7 +34,16 @@ namespace RainbowHunter.Game.View
 
             setProgressBar();
             score.ScoreUpdated += (sender, e) => txtScore.Text = "Score: " + e;
-            sun.SunScoreUpdated += (sender, e) => sunScore.Text = "Sun: " + e;
+            sun.SunScoreUpdated += (sender, e) =>
+            {
+                if (e >= 1000)
+                {
+                    panel1.BackColor = Color.Chocolate;
+                    _game.gameOver(); 
+                }
+                sunScore.Text = "Sun: " + e;
+            };
+            
             
             movementUtility = new MovementUtility(speed, player, roadTrack1, roadTrack2, SUN1, SUN2, AI1, AI2);
             _game = new Controller.Game(gameTimer, player, speed);
@@ -46,23 +55,15 @@ namespace RainbowHunter.Game.View
             sun.ProgressBar.Width = 475;
             sun.ProgressBar.Height = 60;
             sun.ProgressBar.Location = new Point(12, 600);
-            this.Controls.Add(sun.ProgressBar);
-
-            if (sun.ProgressBar.Value >= 20) {
-                panel1.BackColor = Color.Red; 
-            }
-            if (sun.ProgressBar.Value == 100) {
-                // игра закончена
-            }
+            Controls.Add(sun.ProgressBar);
             
         }
-
 
         private void GameTimerEvent(object sender, EventArgs e)
         {
             score.UpdateScore();
-            sun.UpdateSunScore();
-
+            sun.UpdateSunScore(200);
+            
             if (flag)
             {
                 movementUtility.MoveSun(sun);
@@ -71,8 +72,9 @@ namespace RainbowHunter.Game.View
                 movementUtility.MoveMushroom(mushrooms);
                 StartNewGame();
                 _game.UpdateAward();
+                sun.UpdateSunScore();
+
             }
-           
         }
 
         private void ResetGame(object sender, EventArgs e)
@@ -84,7 +86,7 @@ namespace RainbowHunter.Game.View
         
         private void StartNewGame()
         {
-            if (sun.getSunCount() >= 41)
+            if (sun.getSunCount() >= 201)
             {
                 //gameTimer.Stop();
                 flag = false;
@@ -101,9 +103,6 @@ namespace RainbowHunter.Game.View
                 for(var i = 0; i < 2; i ++)
                     nyanCat.CreateNyanCat(AI1, AI2);
                 
-                
-                //this.ParentForm.Close();
-
                 //_gameScenes.StartNyanGame();
             }
         }
