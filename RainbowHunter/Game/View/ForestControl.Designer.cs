@@ -134,6 +134,8 @@ namespace RainbowHunter.Game.View
             this.player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.player.TabIndex = 5;
             this.player.TabStop = false;
+            //this.player.SizeMode = PictureBoxSizeMode.Zoom;
+
             // 
             // AI1
             // 

@@ -18,6 +18,8 @@ namespace RainbowHunter.Game.View
         {
             
             _gameScenes = gameScenes;
+
+            playEndSong();
             Controls.Add(panel);
 
             var label = new Label();
@@ -52,7 +54,14 @@ namespace RainbowHunter.Game.View
             panel.Controls.Add(cat);
 
         }
-        
+
+        private void playEndSong()
+        {
+            System.Media.SoundPlayer endSong = new System.Media.SoundPlayer(Properties.Resources.end);
+            endSong.Play();
+            
+        }
+
         private void OnOpenOtherControlButtonClick(object sender, EventArgs e)
         {
             //var main = (MainForm)FindForm();

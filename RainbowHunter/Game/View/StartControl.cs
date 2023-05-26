@@ -10,15 +10,23 @@ namespace RainbowHunter.Game.View
         public StartControl()
         {
             InitializeComponent();
+            playStartMusic();
         }
         
         public void Configure(Controller.GameScenes gameScenes)
         {
             if (_gameScenes != null)
                 return;
-
+            
             _gameScenes = gameScenes;
             startButton.Click += StartButton_Click;
+        }
+
+        private void playStartMusic()
+        {
+            System.Media.SoundPlayer nyanSong = new System.Media.SoundPlayer(Properties.Resources.hit2);
+            nyanSong.Play();
+            
         }
 
         private void StartButton_Click(object sender, EventArgs e)

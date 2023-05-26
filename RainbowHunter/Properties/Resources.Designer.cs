@@ -70,6 +70,15 @@ namespace RainbowHunter.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream end {
+            get {
+                return ResourceManager.GetStream("end", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap explosion {
@@ -106,6 +115,15 @@ namespace RainbowHunter.Properties {
         internal static System.IO.UnmanagedMemoryStream hit {
             get {
                 return ResourceManager.GetStream("hit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream hit2 {
+            get {
+                return ResourceManager.GetStream("hit2", resourceCulture);
             }
         }
         
