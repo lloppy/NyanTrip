@@ -1,29 +1,31 @@
-﻿namespace RainbowHunter.Game.Domain;
+﻿using RainbowHunter.Game.Domain.Interfaces;
 
-public class Speed
+namespace RainbowHunter.Game.Domain;
+
+public class Speed : ISpeed
 {
-    public int roadSpeed { get; set; }
-    public int trafficSpeed { get; set; }
-    public int playerSpeed { get; set; }
+    public int RoadSpeed { get; set; }
+    public int TrafficSpeed { get; set; }
+    public int PlayerSpeed { get; set; }
 
     public Speed(int roadSpeed, int trafficSpeed, int playerSpeed)
     {
-        this.roadSpeed = roadSpeed;
-        this.trafficSpeed = trafficSpeed;
-        this.playerSpeed = playerSpeed;
-    }
-    
-    public void onPause()
-    {
-        roadSpeed = 0;
-        trafficSpeed = 0;
-        playerSpeed = 0;
+        RoadSpeed = roadSpeed;
+        TrafficSpeed = trafficSpeed;
+        PlayerSpeed = playerSpeed;
     }
 
-    public void onRestart(Speed lastSpeed)
+    public void OnPause()
     {
-        this.roadSpeed = lastSpeed.roadSpeed;
-        this.trafficSpeed = lastSpeed.trafficSpeed;
-        this.playerSpeed = lastSpeed.playerSpeed;
+        RoadSpeed = 0;
+        TrafficSpeed = 0;
+        PlayerSpeed = 0;
+    }
+
+    public void OnRestart(ISpeed lastSpeed)
+    {
+        RoadSpeed = lastSpeed.RoadSpeed;
+        TrafficSpeed = lastSpeed.TrafficSpeed;
+        PlayerSpeed = lastSpeed.PlayerSpeed;
     }
 }

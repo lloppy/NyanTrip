@@ -13,20 +13,20 @@ namespace RainbowHunter.Game.Tests
             var speed = new Speed(roadSpeed, trafficSpeed, playerSpeed);
 
            
-            Assert.AreEqual(roadSpeed, speed.roadSpeed);
-            Assert.AreEqual(trafficSpeed, speed.trafficSpeed);
-            Assert.AreEqual(playerSpeed, speed.playerSpeed);
+            Assert.AreEqual(roadSpeed, speed.RoadSpeed);
+            Assert.AreEqual(trafficSpeed, speed.TrafficSpeed);
+            Assert.AreEqual(playerSpeed, speed.PlayerSpeed);
         }
 
         [Test]
         public void OnPause_SetsAllSpeedsToZero()
         {
             var speed = new Speed(50, 30, 80);
-            speed.onPause();
+            speed.OnPause();
 
-            Assert.AreEqual(0, speed.roadSpeed);
-            Assert.AreEqual(0, speed.trafficSpeed);
-            Assert.AreEqual(0, speed.playerSpeed);
+            Assert.AreEqual(0, speed.RoadSpeed);
+            Assert.AreEqual(0, speed.TrafficSpeed);
+            Assert.AreEqual(0, speed.PlayerSpeed);
         }
 
         [Test]
@@ -35,11 +35,11 @@ namespace RainbowHunter.Game.Tests
             var previousSpeed = new Speed(50, 30, 80);
             var speed = new Speed(60, 40, 100);
 
-            speed.onRestart(previousSpeed);
+            speed.OnRestart(previousSpeed);
             
-            Assert.AreEqual(previousSpeed.roadSpeed, speed.roadSpeed);
-            Assert.AreEqual(previousSpeed.trafficSpeed, speed.trafficSpeed);
-            Assert.AreEqual(previousSpeed.playerSpeed, speed.playerSpeed);
+            Assert.AreEqual(previousSpeed.RoadSpeed, speed.RoadSpeed);
+            Assert.AreEqual(previousSpeed.TrafficSpeed, speed.TrafficSpeed);
+            Assert.AreEqual(previousSpeed.PlayerSpeed, speed.PlayerSpeed);
         }
     }
 }

@@ -90,6 +90,7 @@ namespace RainbowHunter.Game.View
             this.sunScore.Size = new System.Drawing.Size(475, 37);
             this.sunScore.TabIndex = 2;
             this.sunScore.Text = "Sun: 0";
+            this.sunScore.ForeColor = Color.Indigo;
             this.sunScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
@@ -97,10 +98,11 @@ namespace RainbowHunter.Game.View
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(12, 634);
             this.label2.Name = "label2";
+            this.label2.ForeColor = Color.Indigo;
             this.label2.Size = new System.Drawing.Size(475, 138);
             this.label2.TabIndex = 3;
             this.label2.Text = "Нажмите \"Влево\" и \"Вправо\" для перемещения \r\n\r\nCollect mushrooms in the _game an" +
-    "d survive as long as you can";
+                               "d survive as long as you can";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // roadTrack1

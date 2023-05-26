@@ -65,8 +65,8 @@ namespace RainbowHunter.Game.Domain
 
         public void MoveTraffic(PictureBox AI1, PictureBox AI2, Speed speed)
         {
-            AI1.Top += speed.trafficSpeed;
-            AI2.Top += speed.trafficSpeed;
+            AI1.Top += speed.TrafficSpeed;
+            AI2.Top += speed.TrafficSpeed;
             
             if (AI1.Top > 530) ChangeAIMushrooms(AI1);
             if (AI2.Top > 530) ChangeAIMushrooms(AI2);

@@ -36,11 +36,11 @@ namespace RainbowHunter.Game.Tests
             var game = new Game.Controller.Game(gameTimer, player, speed);
             game.UpdateAward();
 
-            game.Speed.roadSpeed = 201;
+            game.Speed.RoadSpeed = 201;
             game.UpdateAward();
 
-            Assert.AreEqual(13,game.Speed.roadSpeed);
-            Assert.AreEqual(16, game.Speed.trafficSpeed);
+            Assert.AreEqual(13,game.Speed.RoadSpeed);
+            Assert.AreEqual(16, game.Speed.TrafficSpeed);
         }
         
         [Test]

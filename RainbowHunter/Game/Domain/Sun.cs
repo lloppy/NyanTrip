@@ -72,8 +72,8 @@ public class Sun
         SUN2.Visible = true;
         SUN1.Visible = true;
         
-        SUN1.Top += speed.trafficSpeed;
-        SUN2.Top += speed.trafficSpeed;
+        SUN1.Top += speed.TrafficSpeed;
+        SUN2.Top += speed.TrafficSpeed;
         
         if (SUN1.Top > 530) ChangeAISuns(SUN1);
         if (SUN2.Top > 530) ChangeAISuns(SUN2);

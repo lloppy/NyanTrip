@@ -54,7 +54,11 @@
         <Compile Include="Game\Controller\GameScenes.cs" />
         <Compile Include="Game\Controller\Game.cs" />
         <Compile Include="Game\Controller\GameStage.cs" />
+        <Compile Include="Game\Controller\Interfaces\IGame.cs" />
+        <Compile Include="Game\Controller\Interfaces\IMovementUtility.cs" />
         <Compile Include="Game\Controller\MovementUtility.cs" />
+        <Compile Include="Game\Domain\Interfaces\INyanCat.cs" />
+        <Compile Include="Game\Domain\Interfaces\ISpeed.cs" />
         <Compile Include="Game\Domain\Mushrooms.cs" />
         <Compile Include="Game\Domain\NyanCats.cs" />
         <Compile Include="Game\Domain\Score.cs" />

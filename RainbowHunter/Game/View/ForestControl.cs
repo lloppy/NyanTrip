@@ -34,7 +34,7 @@ namespace RainbowHunter.Game.View
 
             setProgressBar();
             score.ScoreUpdated += (sender, e) => txtScore.Text = "Score: " + e;
-            sun.SunScoreUpdated += (sender, e) => sunScore.Text = "Sun: " + e;
+            sun.SunScoreUpdated += (sender, e) => sunScore.Text = "Солнышки: " + e;
 
             movementUtility = new MovementUtility(speed, player, roadTrack1, roadTrack2, SUN1, SUN2, AI1, AI2);
             _game = new Controller.Game(gameTimer, player, speed);
@@ -86,7 +86,7 @@ namespace RainbowHunter.Game.View
                 flag = false;
 
                 label2.Text = Resources.ForestControl_StartNewGame_;
-                
+                label2.ForeColor = Color.Indigo;
                 panel1.BackColor = Color.CornflowerBlue;
                 roadTrack1.Visible = false;
                 roadTrack2.Visible = false;

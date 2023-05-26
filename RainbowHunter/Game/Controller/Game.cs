@@ -4,10 +4,11 @@ using RainbowHunter.Properties;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using RainbowHunter.Game.Controller.Interfaces;
 
 namespace RainbowHunter.Game.Controller
 {
-    public class Game
+    public class Game : IGame
     {
         private GameStage stage = GameStage.NotStarted;
         public PictureBox Player { get; set; }
@@ -26,8 +27,8 @@ namespace RainbowHunter.Game.Controller
         public void UpdateAward()
         {
             var endScore = score.CurrentScore;
-            Speed.roadSpeed = endScore > 200 ? 18 : endScore > 900 ? 23 : 13;
-            Speed.trafficSpeed = endScore > 200 ? 20 : endScore > 900 ? 25 : 16;
+            Speed.RoadSpeed = endScore > 200 ? 18 : endScore > 900 ? 23 : 13;
+            Speed.TrafficSpeed = endScore > 200 ? 20 : endScore > 900 ? 25 : 16;
         }
         
         public void ResetGame()
@@ -38,8 +39,8 @@ namespace RainbowHunter.Game.Controller
         
         public void SetGameSettings(PictureBox ai1, PictureBox ai2, PictureBox sun1, PictureBox sun2, Random position)
         {
-            Speed.roadSpeed = 13;
-            Speed.trafficSpeed = 16;
+            Speed.RoadSpeed = 13;
+            Speed.TrafficSpeed = 16;
 
             ai1.Top = position.Next(200, 500) * -1;
             ai1.Left = position.Next(5, 200);

@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Windows.Forms;
+using RainbowHunter.Game.Controller.Interfaces;
 using RainbowHunter.Game.Domain;
 
 namespace RainbowHunter.Game.Controller
 {
-    public class MovementUtility
+ public class MovementUtility : IMovementUtility
     {
         private Speed speed;
         public PictureBox player;
@@ -14,13 +15,13 @@ namespace RainbowHunter.Game.Controller
         public PictureBox sun2;
         public PictureBox AI1;
         public PictureBox AI2;
-        
+
         public bool goLeft;
         public bool goRight;
-        
+
         private Sun sun = new Sun();
-        
-        public MovementUtility(Speed speed, PictureBox player, PictureBox roadTrack1, PictureBox roadTrack2, 
+
+        public MovementUtility(Speed speed, PictureBox player, PictureBox roadTrack1, PictureBox roadTrack2,
             PictureBox sun1, PictureBox sun2, PictureBox ai1, PictureBox ai2)
         {
             this.speed = speed;
@@ -37,18 +38,18 @@ namespace RainbowHunter.Game.Controller
         {
             if (goLeft && player.Left > 10)
             {
-                player.Left -= speed.playerSpeed;
+                player.Left -= speed.PlayerSpeed;
             }
             if (goRight && player.Left < 415)
             {
-                player.Left += speed.playerSpeed;
+                player.Left += speed.PlayerSpeed;
             }
         }
 
         public void MoveRoad()
         {
-            roadTrack1.Top += speed.roadSpeed;
-            roadTrack2.Top += speed.roadSpeed;
+            roadTrack1.Top += speed.RoadSpeed;
+            roadTrack2.Top += speed.RoadSpeed;
             var size = 519;
             if (roadTrack2.Top > size)
             {
@@ -59,28 +60,29 @@ namespace RainbowHunter.Game.Controller
                 roadTrack1.Top = -size;
             }
         }
-        
+
         public void MoveMushroom(Mushrooms mushroom)
         {
-           mushroom.MoveTraffic(AI1, AI2, speed);
-           var progressBar = new ProgressBar();
-           
-           if (player.Bounds.IntersectsWith(AI1.Bounds))
-           {
-               sun.IncreaseSunFromMushroom();
-               mushroom.CreateNewMushroomPosition(AI1);
-           }
-           
-           if (player.Bounds.IntersectsWith(AI2.Bounds))
-           {
-               sun.IncreaseSunFromMushroom();
-               mushroom.CreateNewMushroomPosition(AI2);
-           }
+            mushroom.MoveTraffic(AI1, AI2, speed);
+            var progressBar = new ProgressBar();
+
+            if (player.Bounds.IntersectsWith(AI1.Bounds))
+            {
+                sun.IncreaseSunFromMushroom();
+                mushroom.CreateNewMushroomPosition(AI1);
+            }
+
+            if (player.Bounds.IntersectsWith(AI2.Bounds))
+            {
+                sun.IncreaseSunFromMushroom();
+                mushroom.CreateNewMushroomPosition(AI2);
+            }
         }
-        
-        public void MoveSun(Sun sun) {  
+
+        public void MoveSun(Sun sun)
+        {
             sun.MoveSun(sun1, sun2, speed);
-            
+
             if (player.Bounds.IntersectsWith(sun1.Bounds))
             {
                 sun.IncreaseSun();
