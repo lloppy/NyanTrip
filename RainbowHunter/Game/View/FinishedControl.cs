@@ -16,6 +16,7 @@ namespace RainbowHunter.Game.View
 
         public void Configure(GameScenes gameScenes)
         {
+            
             _gameScenes = gameScenes;
             Controls.Add(panel);
 
@@ -32,7 +33,7 @@ namespace RainbowHunter.Game.View
             var button = new Button();
             button.Location = new Point(300, 538);
             button.Size = new Size(400, 47);
-            button.Text = "Выход";
+            button.Text = "Начать заново";
             button.Font = new Font("Arial", 16);
             button.ForeColor = Color.White;
             button.BackColor = Color.Indigo;
@@ -54,8 +55,9 @@ namespace RainbowHunter.Game.View
         
         private void OnOpenOtherControlButtonClick(object sender, EventArgs e)
         {
-            var main = (MainForm)FindForm();
-            main.Close();
+            //var main = (MainForm)FindForm();
+            //main.Close();
+            Application.Restart();
         }
     }
 }

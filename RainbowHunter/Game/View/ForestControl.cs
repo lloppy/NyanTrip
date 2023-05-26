@@ -19,6 +19,8 @@ namespace RainbowHunter.Game.View
         private bool flag = true;
         private GameScenes _gameScenes;
         Random position = new Random();
+        Timer musicTimer = new Timer() { Interval = 6970 };
+
 
         public ProgressBar progressBar;
 
@@ -35,11 +37,19 @@ namespace RainbowHunter.Game.View
             setProgressBar();
             score.ScoreUpdated += (sender, e) => txtScore.Text = "Score: " + e;
             sun.SunScoreUpdated += (sender, e) => sunScore.Text = "Солнышки: " + e;
+            musicTimer.Tick += (sender, args) => { playSound(); };
 
             movementUtility = new MovementUtility(speed, player, roadTrack1, roadTrack2, SUN1, SUN2, AI1, AI2);
             _game = new Controller.Game(gameTimer, player, speed);
+            
         }
-
+        
+        private void playSound()
+        {
+            System.Media.SoundPlayer nyanSong = new System.Media.SoundPlayer(Properties.Resources.hit);
+            nyanSong.Play();
+        }
+        
         private void setProgressBar()
         {
             sun.ProgressBar.Maximum = 1000;
@@ -69,6 +79,7 @@ namespace RainbowHunter.Game.View
             {
                 gameTimer.Stop();
                 _gameScenes.Finish();
+                musicTimer.Stop();
             }
         }
 
@@ -77,8 +88,10 @@ namespace RainbowHunter.Game.View
             _game.ResetGame();
             _game.SetGameSettings(AI1, AI2, SUN1, SUN2, position);
             gameTimer.Start();
+            musicTimer.Start();
+            playSound();
         }
-        
+
         private void StartNewGame()
         {
             if (sun.GetSunCount() >= 201)

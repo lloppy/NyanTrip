@@ -25,7 +25,7 @@ public class NyanCat: INyanCat
     public void CreateNyanCat(PictureBox AI1, PictureBox AI2, PictureBox AI3, PictureBox AI4)
     {
         var counter = 0;
-        var backColors = new List<Color>{Color.LightSkyBlue, Color.ForestGreen, Color.Gold, Color.Goldenrod, Color.DarkOrange, Color.Coral,  Color.Crimson, Color.Transparent};
+        var backColors = new List<Color>{Color.LightSkyBlue, Color.LimeGreen, Color.Gold, Color.Goldenrod, Color.DarkOrange, Color.Coral,  Color.Crimson, Color.Transparent};
         AI1.Image = Resources.nyan_cat_right;
         AI2.Image = Resources.nyan_cat_right;
         AI3.Image = Resources.nyan_cat_right;
