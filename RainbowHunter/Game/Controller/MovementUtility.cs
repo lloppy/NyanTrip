@@ -7,7 +7,7 @@ namespace RainbowHunter.Game.Controller
     public class MovementUtility
     {
         private Speed speed;
-        private PictureBox player;
+        public PictureBox player;
         private PictureBox roadTrack1;
         private PictureBox roadTrack2;
         public PictureBox sun1;

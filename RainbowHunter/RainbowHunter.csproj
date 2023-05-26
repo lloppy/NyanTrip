@@ -60,6 +60,10 @@
         <Compile Include="Game\Domain\Score.cs" />
         <Compile Include="Game\Domain\Speed.cs" />
         <Compile Include="Game\Domain\Sun.cs" />
+        <Compile Include="Game\Tests\ForestControlTests.cs" />
+        <Compile Include="Game\Tests\GameScenesTests.cs" />
+        <Compile Include="Game\Tests\GameTests.cs" />
+        <Compile Include="Game\Tests\MovementUtilityTests.cs" />
         <Compile Include="Game\Tests\MushroomsTests.cs" />
         <Compile Include="Game\Tests\NyanCatTests.cs" />
         <Compile Include="Game\Tests\ScoreTests.cs" />
