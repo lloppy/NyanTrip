@@ -45,10 +45,10 @@ namespace RainbowHunter.Game.Domain
                 mushroom.Left = _mushroomPosition.Next(230, 360);
             }        
         }
-        
-        private void SetPicture()
+
+        public void SetPicture()
         {
-            var mushroomImageNumber = _rand.Next(1, 9);
+            var mushroomImageNumber = _rand.Next(1, 8);
 
             Mushroom.Image = mushroomImageNumber switch
             {
@@ -59,7 +59,6 @@ namespace RainbowHunter.Game.Domain
                 5 => Properties.Resources.mushroomPink,
                 6 => Properties.Resources.mushroomRed,
                 7 => Properties.Resources.mushroomYellow,
-                8 => Properties.Resources.mushroomBlue,
                 _ => Mushroom.Image
             };
         }

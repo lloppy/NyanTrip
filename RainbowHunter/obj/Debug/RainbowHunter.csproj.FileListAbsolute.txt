@@ -38,3 +38,6 @@ C:\Users\Полина\Downloads\NyanTrip-main\NyanTrip-main\RainbowHunter\obj\De
 C:\Users\Полина\Downloads\NyanTrip-main\NyanTrip-main\RainbowHunter\obj\Debug\RainbowHunter.csproj.CoreCompileInputs.cache
 C:\Users\Полина\Downloads\NyanTrip-main\NyanTrip-main\RainbowHunter\obj\Debug\RainbowHunter.exe
 C:\Users\Полина\Downloads\NyanTrip-main\NyanTrip-main\RainbowHunter\obj\Debug\RainbowHunter.pdb
+C:\Users\Полина\Downloads\RainbowHunter\RainbowHunter\RainbowHunter\bin\Debug\nunit.framework.dll
+C:\Users\Полина\Downloads\RainbowHunter\RainbowHunter\RainbowHunter\bin\Debug\nunit.framework.xml
+C:\Users\Полина\Downloads\RainbowHunter\RainbowHunter\RainbowHunter\obj\Debug\RainbowHunter.csproj.CopyComplete

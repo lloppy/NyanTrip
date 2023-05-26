@@ -60,6 +60,11 @@
         <Compile Include="Game\Domain\Score.cs" />
         <Compile Include="Game\Domain\Speed.cs" />
         <Compile Include="Game\Domain\Sun.cs" />
+        <Compile Include="Game\Tests\MushroomsTests.cs" />
+        <Compile Include="Game\Tests\NyanCatTests.cs" />
+        <Compile Include="Game\Tests\ScoreTests.cs" />
+        <Compile Include="Game\Tests\SpeedTests.cs" />
+        <Compile Include="Game\Tests\SunTests.cs" />
         <Compile Include="Game\View\FinishedControl.cs">
           <SubType>UserControl</SubType>
         </Compile>
@@ -128,9 +133,6 @@
       <Content Include="Resources\silver.png" />
       <Content Include="Resources\sun.png" />
       <Content Include="Resources\user.png" />
-    </ItemGroup>
-    <ItemGroup>
-      <Folder Include="Game\Tests" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

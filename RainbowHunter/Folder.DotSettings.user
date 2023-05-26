@@ -1,3 +1,12 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=4763a6f1_002Da180_002D481e_002D9ca3_002D7972caca79c1/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="SunTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::B629466F-967B-4BC9-B254-FC5C24CDA638::.NETFramework,Version=v4.7.2::RainbowHunter.Game.Tests.SunTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::B629466F-967B-4BC9-B254-FC5C24CDA638::.NETFramework,Version=v4.7.2::RainbowHunter.Game.Tests.NyanCatTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::B629466F-967B-4BC9-B254-FC5C24CDA638::.NETFramework,Version=v4.7.2::RainbowHunter.Game.Tests.MushroomsTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::B629466F-967B-4BC9-B254-FC5C24CDA638::.NETFramework,Version=v4.7.2::RainbowHunter.Game.Tests.ScoreTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::B629466F-967B-4BC9-B254-FC5C24CDA638::.NETFramework,Version=v4.7.2::RainbowHunter.Game.Tests.SpeedTests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=RainbowHunter_002FProperties_002FResources/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/Initialized/@EntryValue">True</s:Boolean></wpf:ResourceDictionary>
