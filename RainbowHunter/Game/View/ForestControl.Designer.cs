@@ -128,13 +128,13 @@ namespace RainbowHunter.Game.View
             // player
             // 
             this.player.Image = global::RainbowHunter.Properties.Resources.user;
-            this.player.Location = new System.Drawing.Point(215, 402);
+            this.player.Location = new System.Drawing.Point(185, 402);
             this.player.Name = "player";
             this.player.Size = new System.Drawing.Size(50, 99);
             this.player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.player.TabIndex = 5;
             this.player.TabStop = false;
-            //this.player.SizeMode = PictureBoxSizeMode.Zoom;
+            this.player.SizeMode = PictureBoxSizeMode.Zoom;
 
             // 
             // AI1
