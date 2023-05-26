@@ -19,7 +19,7 @@ namespace RainbowHunter.Game.View
         private bool flag = true;
         private GameScenes _gameScenes;
         Random position = new Random();
-        Timer musicTimer = new Timer() { Interval = 6970 };
+        Timer musicTimer = new Timer() { Interval = 6919 };
 
 
         public ProgressBar progressBar;
