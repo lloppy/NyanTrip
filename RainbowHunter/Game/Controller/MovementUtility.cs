@@ -60,13 +60,8 @@ namespace RainbowHunter.Game.Controller
                 roadTrack1.Top = -size;
             }
         }
-
+        
         public void MoveMushroom(Mushrooms mushroom)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void MoveMushroom(Mushrooms mushroom, Panel panel1)
         {
             mushroom.MoveTraffic(AI1, AI2, speed);
             var progressBar = new ProgressBar();
@@ -89,7 +84,7 @@ namespace RainbowHunter.Game.Controller
         private void ThrowTomato()
         {
             var random = new Random();
-            var luckyCharm = random.Next(0, 10);
+            var luckyCharm = random.Next(0, 11);
 
             if (luckyCharm == 4)
             { 

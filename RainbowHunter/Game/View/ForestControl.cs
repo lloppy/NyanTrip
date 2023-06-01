@@ -67,7 +67,7 @@ namespace RainbowHunter.Game.View
                 movementUtility.MoveSun(sun);
                 movementUtility.MovePlayer();
                 movementUtility.MoveRoad();
-                movementUtility.MoveMushroom(mushrooms, panel1);
+                movementUtility.MoveMushroom(mushrooms);
                 StartNewGame();
                 _game.UpdateAward();
                 sun.UpdateSunScore();
