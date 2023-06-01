@@ -21,14 +21,14 @@ namespace RainbowHunter.Game.Tests
             var nyanCat = new NyanCat(panel, random);
             nyanCat.CreateNyanCat(ai1, ai2, ai3, ai4);
 
-            Assert.AreEqual(ai1.Top, 60);
-            Assert.AreEqual(ai1.Left, 60);
-            Assert.AreEqual(ai2.Top, 260);
-            Assert.AreEqual(ai2.Left, 250);
-            Assert.AreEqual(ai3.Top, 390);
-            Assert.AreEqual(ai3.Left, 370);
-            Assert.AreEqual(ai4.Top, 350);
-            Assert.AreEqual(ai4.Left, 350);
+            Assert.AreEqual(ai1.Top, 0);
+            Assert.AreEqual(ai1.Left, 0);
+            Assert.AreEqual(ai2.Top, 50);
+            Assert.AreEqual(ai2.Left, 50);
+            Assert.AreEqual(ai3.Top, 1);
+            Assert.AreEqual(ai3.Left, 40);
+            Assert.AreEqual(ai4.Top, 176);
+            Assert.AreEqual(ai4.Left, 150);
 
             Assert.IsNotNull(ai1.Image);
             Assert.IsNotNull(ai2.Image);
