@@ -1,4 +1,4 @@
-# MushroomHunter
+# Mushroom Hunter Simulator
 
 ## MVC C# game with unit tests
 
