@@ -63,6 +63,11 @@ namespace RainbowHunter.Game.Controller
 
         public void MoveMushroom(Mushrooms mushroom)
         {
+            throw new NotImplementedException();
+        }
+
+        public void MoveMushroom(Mushrooms mushroom, Panel panel1)
+        {
             mushroom.MoveTraffic(AI1, AI2, speed);
             var progressBar = new ProgressBar();
 
@@ -70,14 +75,43 @@ namespace RainbowHunter.Game.Controller
             {
                 sun.IncreaseSunFromMushroom();
                 mushroom.CreateNewMushroomPosition(AI1);
+                ThrowTomato();
             }
 
             if (player.Bounds.IntersectsWith(AI2.Bounds))
             {
                 sun.IncreaseSunFromMushroom();
                 mushroom.CreateNewMushroomPosition(AI2);
+                ThrowTomato();
             }
         }
+
+        private void ThrowTomato()
+        {
+            var random = new Random();
+            var luckyCharm = random.Next(0, 10);
+
+            if (luckyCharm == 4)
+            { 
+                var tomato = new PictureBox();
+                tomato.Image = Properties.Resources.tomato;
+                tomato.BackColor = System.Drawing.Color.Transparent;
+                tomato.Width = 475;
+                tomato.Height = 519;
+                tomato.Location = new System.Drawing.Point(0, 0);
+                player.Parent.Controls.Add(tomato);
+                tomato.BringToFront();
+                
+                var timer = new Timer();
+                timer.Interval = 2000; 
+                timer.Tick += (s, e) => {
+                    player.Parent.Controls.Remove(tomato);
+                    timer.Stop();
+                };
+                timer.Start();
+            }
+        }
+
 
         public void MoveSun(Sun sun)
         {

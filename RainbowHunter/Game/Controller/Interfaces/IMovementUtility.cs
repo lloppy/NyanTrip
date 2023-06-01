@@ -1,4 +1,5 @@
-﻿using RainbowHunter.Game.Domain;
+﻿using System.Windows.Forms;
+using RainbowHunter.Game.Domain;
 
 namespace RainbowHunter.Game.Controller.Interfaces;
 

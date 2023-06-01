@@ -19,9 +19,8 @@ namespace RainbowHunter.Game.View
         private bool flag = true;
         private GameScenes _gameScenes;
         Random position = new Random();
+        
         Timer musicTimer = new Timer() { Interval = 6919 };
-
-
         public ProgressBar progressBar;
 
         public ForestControl()
@@ -46,7 +45,7 @@ namespace RainbowHunter.Game.View
         
         private void playSound()
         {
-            System.Media.SoundPlayer nyanSong = new System.Media.SoundPlayer(Properties.Resources.hit);
+            System.Media.SoundPlayer nyanSong = new System.Media.SoundPlayer(Resources.hit);
             nyanSong.Play();
         }
         
@@ -68,7 +67,7 @@ namespace RainbowHunter.Game.View
                 movementUtility.MoveSun(sun);
                 movementUtility.MovePlayer();
                 movementUtility.MoveRoad();
-                movementUtility.MoveMushroom(mushrooms);
+                movementUtility.MoveMushroom(mushrooms, panel1);
                 StartNewGame();
                 _game.UpdateAward();
                 sun.UpdateSunScore();
